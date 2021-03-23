@@ -3,10 +3,10 @@
 // @name:en-US          Play with mpv
 // @name:zh-CN          使用 mpv 播放
 // @name:zh-TW          使用 mpv 播放
-// @description         Play website videos and songs with mpv & youtube-dl
-// @description:en-US   Play website videos and songs with mpv & youtube-dl
-// @description:zh-CN   通过 mpv 和 youtube-dl 播放网页上的视频和歌曲
-// @description:zh-TW   通過 mpv 和 youtube-dl 播放網頁上的視頻和歌曲
+// @description         Play videos and songs on the website via mpv-handler
+// @description:en-US   Play videos and songs on the website via mpv-handler
+// @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
+// @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
 // @version             2021.03.02
 // @author              Akatsuki Rui

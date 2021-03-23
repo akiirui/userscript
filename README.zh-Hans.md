@@ -1,6 +1,6 @@
 # Play with mpv handler
 
-通过 mpv & youtube-dl 播放网页上的视频和歌曲，无需任何后台服务。
+通过 mpv-handler 播放网页上的视频和歌曲，无需任何后台服务。
 
 此用户脚本[不兼容 Greasemonkey v4.0+][note-greasemonkey]，请尝试 Violentmonkey 或 Tampermonky。
 

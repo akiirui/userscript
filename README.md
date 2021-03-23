@@ -1,6 +1,6 @@
 # Play with mpv handler
 
-Play website videos and songs with mpv & youtube-dl, without any background service.
+Play videos and songs on the website via mpv-handler, without any background service.
 
 > This userscipt is [not compatible with Greasemonkey v4.0+][note-greasemokey], try Violentmoneky or Tampermonkey.
 

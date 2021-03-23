@@ -1,6 +1,6 @@
 # Play with mpv handler
 
-通過 mpv & youtube-dl 播放網頁上的視頻和歌曲，無需任何後臺服務。
+通過 mpv-handler 播放網頁上的視頻和歌曲，無需任何後臺服務。
 
 此用戶腳本[不兼容 Greasemonkey v4.0+][note-greasemonkey]，請嘗試 Violentmonkey 或 Tampermonky。
 
