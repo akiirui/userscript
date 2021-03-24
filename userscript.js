@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2021.03.02
+// @version             2021.03.24
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -30,7 +30,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.1.7";
+const MPV_HANDLER_VERSION = "v0.1.8";
 
 const MATCHERS = {
   "clips.twitch.tv": /clips.twitch.tv/gi,
