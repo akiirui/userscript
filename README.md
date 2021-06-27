@@ -28,7 +28,7 @@ Or
 3. Move `mpv-handler` to `~/.local/bin/`
 4. Move `mpv-handler.desktop` to `~/.local/share/applications/`
 
-**Recommend using package manager, but you need packaging it manually.**
+**Recommend to use package manager. But you need building the package by yourself.**
 
 ### Windows
 
