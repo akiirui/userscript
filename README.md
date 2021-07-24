@@ -1,4 +1,4 @@
-# Play with mpv handler
+# play with mpv
 
 Play videos and songs on the website via mpv-handler, without any background service.
 

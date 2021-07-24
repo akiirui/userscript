@@ -1,4 +1,4 @@
-# Play with mpv handler
+# play with mpv
 
 通过 mpv-handler 播放网页上的视频和歌曲，无需任何后台服务。
 
