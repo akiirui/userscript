@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2021.04.24
+// @version             2021.07.24
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -30,12 +30,13 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.1.8";
+const MPV_HANDLER_VERSION = "v0.2.5";
 
 const MATCHERS = {
   "clips.twitch.tv": /clips.twitch.tv/gi,
   "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
-  "www.twitch.tv": /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
+  "www.twitch.tv":
+    /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
   "www.youtube.com": /www.youtube.com\/(watch|playlist)\?/gi,
 };
 
@@ -146,8 +147,8 @@ body {
 const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 999;
-width:270px;
-height: 200px;
+width: 440px;
+height: 240px;
 border: 1px solid;
 border-radius: 2px;
 `;
@@ -159,7 +160,7 @@ GM_config.init({
     perferQuality: {
       label: "Prefer Quality",
       type: "radio",
-      options: ["Best", "4K", "2K", "1080P", "720P"],
+      options: ["Best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
       default: "Best",
     },
     useCookies: {
@@ -265,8 +266,14 @@ function updateButton(currentUrl) {
     let cookies = GM_config.get("useCookies").toLowerCase();
     let protocol = "mpv://" + btoa(currentUrl) + "/";
 
-    protocol += "?quality=" + quality;
-    protocol += "&cookies=" + cookies;
+    if (cookies === "yes") {
+      protocol += "?cookies=" + document.location.hostname + ".txt" + "&";
+    } else {
+      protocol += "?";
+    }
+
+    protocol += "downloader=mpv" + "&";
+    protocol += "quality=" + quality;
 
     button.style = isMatch ? "display: block" : "display: none";
     button.href = isMatch ? protocol : "";

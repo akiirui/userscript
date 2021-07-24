@@ -4,12 +4,22 @@
 
 此用戶腳本[不兼容 Greasemonkey v4.0+][note-greasemonkey]，請嘗試 Violentmonkey 或 Tampermonky。
 
+開發者注:
+
+> 由於 mpv-handler 有一個大的功能性更新，此用戶腳本暫時不支持新的「下載器選擇」功能。
+>
+> 功能「下載器選擇」將盡快更新。
+
 ## 安裝
 
-### 基礎
+### userscript
 
-- 安裝 [mpv][install-mpv] & [youtube-dl][install-youtube-dl]
-- 安裝油猴腳本 [play-with-mpv-handler][install-userscript]
+[![][badges-play-with-mpv]][install-userscript]
+
+### mpv & youtube-dl
+
+[![mpv][badges-mpv]][install-mpv]
+[![ytdl][badges-ytdl]][install-ytdl]
 
 > 推薦 Windows 用戶安裝 [shinchiro's mpv builds][install-mpv-windows].
 >
@@ -17,24 +27,9 @@
 >
 > 在安裝這個構建後，記住運行 `updater.bat` 以更新 `mpv` 和下載最新的 `youtube-dl`。
 
-### Linux
+### mpv-handler
 
-1. 安裝軟件包 [mpv-handler-git][install-mpv-handler-arch] <sup>AUR</sup> (僅限 Arch Linux)
-
-或者
-
-1. 下載最新的 [`mpv-handler-linux-x64.zip`][install-mpv-handler-linux]
-2. 解壓縮壓縮包
-3. 移動 `mpv-handler` 至 `~/.local/bin/`
-4. 移動 `mpv-handler.desktop` 至 `~/.local/share/applications/`
-
-**建議使用包管理器，但是你可能需要自己打包。**
-
-### Windows
-
-1. 下載最新的 [`mpv-handler-windows-x64.zip`][install-mpv-handler-windows]
-2. 解壓縮至 `mpv` 的安裝文件夾
-3. 運行 `handler-install.bat` 註冊協議處理程序
+[![mpv-handler][badges-mpv-handler]][install-mpv-handler]
 
 ## 使用
 
@@ -86,7 +81,7 @@ Cookies 的文件名必須遵循以下格式：
 
 ## GitHub
 
-- [play-with-mpv-handler][github-userscript]
+- [play-with-mpv][github-userscript]
 - [mpv-handler][github-mpv-handler]
 
 ## 鳴謝
@@ -95,21 +90,23 @@ Cookies 的文件名必須遵循以下格式：
 - [youtube-dl][thanks-youtube-dl]
 - [papirus-icon-theme][thanks-papirus-icon-theme]
 
-[note-greasemonkey]: https://github.com/akiirui/userscript/issues/1
-[install-mpv]: https://mpv.io/installation/
-[install-youtube-dl]: https://github.com/ytdl-org/youtube-dl/releases
-[install-userscript]: https://greasyfork.org/scripts/416271-play-with-mpv
+[badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
+[badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
+[badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
+[badges-ytdl]: https://img.shields.io/github/v/tag/ytdl-org/youtube-dl?label=youtube-dl&style=for-the-badge
+[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
+[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv-handler/
+[install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
-[install-mpv-handler-arch]: https://aur.archlinux.org/packages/mpv-handler-git/
-[install-mpv-handler-linux]: https://github.com/akiirui/mpv-handler/releases/latest/download/mpv-handler-linux-x64.zip
-[install-mpv-handler-windows]: https://github.com/akiirui/mpv-handler/releases/latest/download/mpv-handler-windows-x64.zip
-[usage-format-selection]: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#format-selection
-[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
-[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[install-mpv]: https://mpv.io/installation/
+[install-userscript]: https://greasyfork.org/scripts/416271-play-with-mpv
+[install-ytdl]: https://github.com/ytdl-org/youtube-dl/releases
+[note-greasemonkey]: https://github.com/akiirui/userscript/issues/1
 [support-issues]: https://github.com/akiirui/userscript/issues/new
 [support-sites]: https://ytdl-org.github.io/youtube-dl/supportedsites.html
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv-handler/
-[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
 [thanks-mpv]: https://mpv.io/
-[thanks-youtube-dl]: https://github.com/ytdl-org/youtube-dl/
 [thanks-papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+[thanks-youtube-dl]: https://github.com/ytdl-org/youtube-dl/
+[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
+[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[usage-format-selection]: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#format-selection

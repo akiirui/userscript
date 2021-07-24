@@ -2,14 +2,24 @@
 
 Play videos and songs on the website via mpv-handler, without any background service.
 
-> This userscipt is [not compatible with Greasemonkey v4.0+][note-greasemokey], try Violentmoneky or Tampermonkey.
+> This userscipt is [not compatible with Greasemonkey v4.0+][note-greasemonkey], try Violentmoneky or Tampermonkey.
 
-## Install
+Developer's note:
 
-### Both
+> Because mpv-handler has a big feature updates, this userscript doesn't yet supported feature "Select Downloader".
+>
+> The feature "Select Downloader" will be updated asap.
 
-- Install [mpv][install-mpv] & [youtube-dl][install-youtube-dl]
-- Install userscript [play-with-mpv-handler][install-userscript]
+## Installation
+
+### userscript
+
+[![][badges-play-with-mpv]][install-userscript]
+
+### mpv & youtube-dl
+
+[![mpv][badges-mpv]][install-mpv]
+[![ytdl][badges-ytdl]][install-ytdl]
 
 > For Windows users, recommend to install [shinchiro's mpv builds][install-mpv-windows].
 >
@@ -17,24 +27,9 @@ Play videos and songs on the website via mpv-handler, without any background ser
 >
 > After install this build, remember run `updater.bat` to update `mpv` and download latest `youtube-dl`.
 
-### Linux
+### mpv-handler
 
-1. Install package [mpv-handler-git][install-mpv-handler-arch] <sup>AUR</sup> (Arch Linux Only)
-
-Or
-
-1. Download latest [`mpv-handler-linux-x64.zip`][install-mpv-handler-linux]
-2. Unzip this archive.
-3. Move `mpv-handler` to `~/.local/bin/`
-4. Move `mpv-handler.desktop` to `~/.local/share/applications/`
-
-**Recommend to use package manager. But you need building the package by yourself.**
-
-### Windows
-
-1. Download latest [`mpv-handler-windows-x64.zip`][install-mpv-handler-windows]
-2. Unzip this archive to `mpv` installation folder
-3. Run `handler-install.bat` to register protocol handler
+[![mpv-handler][badges-mpv-handler]][install-mpv-handler]
 
 ## Usage
 
@@ -86,7 +81,7 @@ Of course, `youtube-dl` [supported sites][support-sites] only.
 
 ## GitHub
 
-- [play-with-mpv-handler][github-userscript]
+- [play-with-mpv][github-userscript]
 - [mpv-handler][github-mpv-handler]
 
 ## Thanks
@@ -95,21 +90,23 @@ Of course, `youtube-dl` [supported sites][support-sites] only.
 - [youtube-dl][thanks-youtube-dl]
 - [papirus-icon-theme][thanks-papirus-icon-theme]
 
-[note-greasemokey]: https://github.com/akiirui/userscript/issues/1
-[install-mpv]: https://mpv.io/installation/
-[install-youtube-dl]: https://github.com/ytdl-org/youtube-dl/releases
-[install-userscript]: https://greasyfork.org/scripts/416271-play-with-mpv
+[badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
+[badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
+[badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
+[badges-ytdl]: https://img.shields.io/github/v/tag/ytdl-org/youtube-dl?label=youtube-dl&style=for-the-badge
+[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
+[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv-handler/
+[install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
-[install-mpv-handler-arch]: https://aur.archlinux.org/packages/mpv-handler-git/
-[install-mpv-handler-linux]: https://github.com/akiirui/mpv-handler/releases/latest/download/mpv-handler-linux-x64.zip
-[install-mpv-handler-windows]: https://github.com/akiirui/mpv-handler/releases/latest/download/mpv-handler-windows-x64.zip
-[usage-format-selection]: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#format-selection
-[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
-[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[install-mpv]: https://mpv.io/installation/
+[install-userscript]: https://greasyfork.org/scripts/416271-play-with-mpv
+[install-ytdl]: https://github.com/ytdl-org/youtube-dl/releases
+[note-greasemonkey]: https://github.com/akiirui/userscript/issues/1
 [support-issues]: https://github.com/akiirui/userscript/issues/new
 [support-sites]: https://ytdl-org.github.io/youtube-dl/supportedsites.html
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv-handler/
-[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
 [thanks-mpv]: https://mpv.io/
-[thanks-youtube-dl]: https://github.com/ytdl-org/youtube-dl/
 [thanks-papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+[thanks-youtube-dl]: https://github.com/ytdl-org/youtube-dl/
+[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
+[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[usage-format-selection]: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#format-selection
