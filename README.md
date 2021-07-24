@@ -95,7 +95,7 @@ Of course, `youtube-dl` [supported sites][support-sites] only.
 [badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
 [badges-ytdl]: https://img.shields.io/github/v/tag/ytdl-org/youtube-dl?label=youtube-dl&style=for-the-badge
 [github-mpv-handler]: https://github.com/akiirui/mpv-handler/
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv-handler/
+[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv/
 [install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
 [install-mpv]: https://mpv.io/installation/
