@@ -56,7 +56,7 @@ Cookies must be export to these path:
 
 - Linux:
 
-  - `~/.config/mpv/cookies/`
+  - `$HOME/.config/mpv-handler/cookies/`
 
 - Windows:
 

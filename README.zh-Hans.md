@@ -56,7 +56,7 @@ Cookies 必须导出至以下位置：
 
 - Linux:
 
-  - `~/.config/mpv/cookies/`
+  - `$HOME/.config/mpv-handler/cookies/`
 
 - Windows:
 
