@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2021.07.24.1
+// @version             2021.09.21
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -30,7 +30,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.2.7";
+const MPV_HANDLER_VERSION = "v0.2.14";
 
 const MATCHERS = {
   "clips.twitch.tv": /clips.twitch.tv/gi,
@@ -264,7 +264,7 @@ function updateButton(currentUrl) {
   if (button) {
     let quality = GM_config.get("perferQuality").toLowerCase();
     let cookies = GM_config.get("useCookies").toLowerCase();
-    let protocol = "mpv://" + btoa(currentUrl) + "/";
+    let protocol = "mpv://play/" + btoa(currentUrl) + "/";
 
     if (cookies === "yes") {
       protocol += "?cookies=" + document.location.hostname + ".txt" + "&";
