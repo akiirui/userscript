@@ -26,6 +26,7 @@
 // @match               *://www.bilibili.com/video/*
 // @match               *://www.twitch.tv/*
 // @match               *://www.youtube.com/*
+// @match               *://m.youtube.com/*
 // ==/UserScript==
 
 "use strict";
@@ -38,6 +39,7 @@ const MATCHERS = {
   "www.twitch.tv":
     /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
   "www.youtube.com": /www.youtube.com\/(watch|playlist)\?/gi,
+  "m.youtube.com": /m.youtube.com\/(watch|playlist)\?/gi,
 };
 
 const ICON_MPV =
@@ -227,9 +229,10 @@ function appendButton() {
     buttonPlay.className = "pwm-play";
     buttonPlay.target = "pwm-iframe";
     buttonPlay.style = "display: none";
-    buttonPlay.addEventListener("click", () => {
+    buttonPlay.addEventListener("click", (e) => {
       let videoElement = document.getElementsByTagName("video")[0];
       if (videoElement) videoElement.pause();
+      if (e.stopPropagation) e.stopPropagation();
     });
 
     buttonSettings.className = "pwm-settings";
