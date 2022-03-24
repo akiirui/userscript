@@ -38,8 +38,8 @@ const MATCHERS = {
   "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
   "www.twitch.tv":
     /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
-  "www.youtube.com": /www.youtube.com\/(watch|playlist)\?/gi,
-  "m.youtube.com": /m.youtube.com\/(watch|playlist)\?/gi,
+  "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
+  "m.youtube.com": /m.youtube.com\/(watch|playlist|shorts)\?/gi,
 };
 
 const ICON_MPV =
