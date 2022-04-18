@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2022.04.17
+// @version             2022.04.18
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -195,11 +195,11 @@ function notifyUpdate() {
       text: `mpv-handler is upgraded to ${MPV_HANDLER_VERSION}\n\nClick to check updates`,
       onclick: () => {
         GM_openInTab("https://github.com/akiirui/mpv-handler/releases/latest");
-        GM_setValue("mpvHandlerVersion", MPV_HANDLER_VERSION);
       },
     };
 
     GM_notification(UPDATE_NOTIFY);
+    GM_setValue("mpvHandlerVersion", MPV_HANDLER_VERSION);
   }
 }
 
