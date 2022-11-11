@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name                Play with mpv
-// @name:en-US          Play with mpv
-// @name:zh-CN          使用 mpv 播放
-// @name:zh-TW          使用 mpv 播放
+// @name                Play with MPV
+// @name:en-US          Play with MPV
+// @name:zh-CN          使用 MPV 播放
+// @name:zh-TW          使用 MPV 播放
 // @description         Play videos and songs on the website via mpv-handler
 // @description:en-US   Play videos and songs on the website via mpv-handler
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2022.10.29
+// @version             2022.11.11
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -17,13 +17,11 @@
 // @grant               GM_setValue
 // @grant               GM_notification
 // @grant               GM_openInTab
-// @compatible          chrome Since Chrome 49.x
-// @compatible          firefox Since Firefox 44.x with Violentmonky or Tampermonkey
-// @compatible          opera Since 17.x
 // @run-at              document-idle
 // @noframes
 // @match               *://clips.twitch.tv/*
 // @match               *://www.bilibili.com/video/*
+// @match               *://live.bilibili.com/*
 // @match               *://www.twitch.tv/*
 // @match               *://www.youtube.com/*
 // @match               *://m.youtube.com/*
@@ -31,11 +29,12 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.2.17";
+const MPV_HANDLER_VERSION = "v0.3.0";
 
 const MATCHERS = {
   "clips.twitch.tv": /clips.twitch.tv/gi,
   "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
+  "live.bilibili.com": /live.bilibili.com\/\d+/gi,
   "www.twitch.tv":
     /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -109,6 +108,7 @@ const MPV_CSS = `
   display: none;
 }
 .play-with-mpv {
+  z-index: 99999;
   position: fixed;
   left: 8px;
   bottom: 8px;
@@ -204,7 +204,11 @@ function notifyUpdate() {
 }
 
 function matchUrl(currentUrl) {
-  return currentUrl.search(MATCHERS[location.hostname]) !== -1;
+  if (MATCHERS[location.hostname]) {
+    return currentUrl.search(MATCHERS[location.hostname]) !== -1;
+  } else {
+    return false;
+  }
 }
 
 function appendButton() {
@@ -216,7 +220,7 @@ function appendButton() {
     head.appendChild(style);
   }
 
-  let body = document.getElementsByTagName("body")[0];
+  let body = document.body;
   let buttonDiv = document.createElement("div");
   let buttonIframe = document.createElement("iframe");
   let buttonPlay = document.createElement("a");
@@ -267,19 +271,32 @@ function updateButton(currentUrl) {
   if (button) {
     let quality = GM_config.get("perferQuality").toLowerCase();
     let cookies = GM_config.get("useCookies").toLowerCase();
-    let protocol = "mpv://play/" + btoa(currentUrl) + "/";
+    let options = [];
+
+    let proto =
+      "mpv://play/" + btoa(currentUrl).replace(/\//g, "_").replace(/\+/g, "-");
 
     if (cookies === "yes") {
-      protocol += "?cookies=" + document.location.hostname + ".txt" + "&";
-    } else {
-      protocol += "?";
+      options.push("cookies=" + document.location.hostname + ".txt");
+    }
+    if (quality !== "best") {
+      options.push("quality=" + quality);
     }
 
-    protocol += "downloader=mpv" + "&";
-    protocol += "quality=" + quality;
+    if (options.length !== 0) {
+      proto += "/?";
+
+      options.forEach((option, index) => {
+        proto += option;
+
+        if (index + 1 !== options.length) {
+          proto += "&";
+        }
+      });
+    }
 
     button.style = isMatch ? "display: block" : "display: none";
-    button.href = isMatch ? protocol : "";
+    button.href = isMatch ? proto : "";
   }
 }
 
