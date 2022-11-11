@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2022.11.11.1
+// @version             2022.11.11.2
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -105,9 +105,6 @@ const MPV_CSS = `
   background-color: #eeeeee;
   background-image: url(data:image/svg+xml;base64,${ICON_SETTINGS});
   background-repeat: no-repeat;
-}
-.pwm-iframe {
-  display: none;
 }
 .play-with-mpv {
   z-index: 99999;
@@ -224,17 +221,13 @@ function appendButton() {
 
   let body = document.body;
   let buttonDiv = document.createElement("div");
-  let buttonIframe = document.createElement("iframe");
   let buttonPlay = document.createElement("a");
   let buttonSettings = document.createElement("button");
 
   if (body) {
-    buttonIframe.className = "pwm-iframe";
-    buttonIframe.name = "pwm-iframe";
-
     buttonPlay.className = "pwm-play";
-    buttonPlay.target = "pwm-iframe";
     buttonPlay.style = "display: none";
+    buttonPlay.target = "_blank";
     buttonPlay.addEventListener("click", (e) => {
       let videoElement = document.getElementsByTagName("video")[0];
       if (videoElement) videoElement.pause();
@@ -250,7 +243,6 @@ function appendButton() {
     });
 
     buttonDiv.className = "play-with-mpv";
-    buttonDiv.appendChild(buttonIframe);
     buttonDiv.appendChild(buttonPlay);
     buttonDiv.appendChild(buttonSettings);
 
