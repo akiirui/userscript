@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2022.11.11
+// @version             2022.11.11.1
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -20,11 +20,12 @@
 // @run-at              document-idle
 // @noframes
 // @match               *://clips.twitch.tv/*
-// @match               *://www.bilibili.com/video/*
 // @match               *://live.bilibili.com/*
+// @match               *://m.youtube.com/*
+// @match               *://www.bilibili.com/video/*
+// @match               *://www.crunchyroll.com/*
 // @match               *://www.twitch.tv/*
 // @match               *://www.youtube.com/*
-// @match               *://m.youtube.com/*
 // ==/UserScript==
 
 "use strict";
@@ -33,12 +34,13 @@ const MPV_HANDLER_VERSION = "v0.3.0";
 
 const MATCHERS = {
   "clips.twitch.tv": /clips.twitch.tv/gi,
+  "live.bilibili.com": /live.bilibili.com\/[0-9]+/gi,
+  "m.youtube.com": /m.youtube.com\/(watch|playlist|shorts)\?/gi,
   "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
-  "live.bilibili.com": /live.bilibili.com\/\d+/gi,
+  "www.crunchyroll.com": /www.crunchyroll.com\/watch\/([0-9]|[A-Z])+\//gi,
   "www.twitch.tv":
     /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
-  "m.youtube.com": /m.youtube.com\/(watch|playlist|shorts)\?/gi,
 };
 
 const ICON_MPV =
