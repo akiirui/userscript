@@ -17,33 +17,15 @@
 // @grant               GM_setValue
 // @grant               GM_notification
 // @grant               GM_openInTab
-// @run-at              document-idle
+// @run-at              document-body
 // @noframes
-// @match               *://www.youtube.com/*
-// @match               *://m.youtube.com/*
-// @match               *://www.twitch.tv/*
-// @match               *://clips.twitch.tv/*
-// @match               *://www.crunchyroll.com/*
-// @match               *://beta.crunchyroll.com/*
-// @match               *://www.bilibili.com/video/*
-// @match               *://live.bilibili.com/*
+// @match        http://*/*
+// @match        https://*/*
 // ==/UserScript==
 
 "use strict";
 
 const MPV_HANDLER_VERSION = "v0.3.0";
-
-const MATCHERS = {
-  "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
-  "m.youtube.com": /m.youtube.com\/(watch|playlist|shorts)\?/gi,
-  "www.twitch.tv":
-    /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
-  "clips.twitch.tv": /clips.twitch.tv/gi,
-  "www.crunchyroll.com": /www.crunchyroll.com\/.*watch\/([0-9]|[A-Z])+/gi,
-  "beta.crunchyroll.com": /beta.crunchyroll.com\/.*watch\/([0-9]|[A-Z])+/gi,
-  "live.bilibili.com": /live.bilibili.com\/[0-9]+/gi,
-  "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
-};
 
 const ICON_MPV =
   "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0\
@@ -134,7 +116,7 @@ body {
 #${CONFIG_ID} .config_header {
   padding-bottom: 8px;
 }
-#${CONFIG_ID}_field_perferQuality {
+#${CONFIG_ID}_field_preferQuality {
   padding-top: 4px;
   padding-bottom: 8px;
 }
@@ -160,7 +142,7 @@ GM_config.init({
   id: `${CONFIG_ID}`,
   title: `${GM_info.script.name}`,
   fields: {
-    perferQuality: {
+    preferQuality: {
       label: "Prefer Quality",
       type: "radio",
       options: ["Best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
@@ -175,17 +157,192 @@ GM_config.init({
   },
   events: {
     save: () => {
-      updateButton(location.href);
+      updateButton(location.href, true);
       GM_config.close();
     },
     reset: () => {
-      updateButton(location.href);
+      updateButton(location.href, true);
       GM_config.save();
       GM_config.close();
     },
   },
   css: CONFIG_CSS.trim(),
 });
+
+const original = {
+  // 防止 defineProperty 和 defineProperties 被 AOP 脚本重写
+  Object: {
+    defineProperty: Object.defineProperty,
+    defineProperties: Object.defineProperties,
+  },
+
+  // 防止此类玩法：https://juejin.cn/post/6865910564817010702
+  Proxy,
+
+  Map,
+  map: {
+    clear: Map.prototype.clear,
+    set: Map.prototype.set,
+    has: Map.prototype.has,
+    get: Map.prototype.get,
+  },
+
+  console: {
+    log: console.log,
+    info: console.info,
+    error: console.error,
+    warn: console.warn,
+    table: console.table,
+  },
+
+  ShadowRoot,
+  HTMLMediaElement,
+  CustomEvent,
+
+  JSON: {
+    parse: JSON.parse,
+    stringify: JSON.stringify,
+  },
+
+  alert,
+  confirm,
+  prompt,
+};
+
+const mediaCore = (function () {
+  let hasMediaCoreInit = false;
+  let hasProxyHTMLMediaElement = false;
+  let originDescriptors = {};
+  const originMethods = {};
+  const mediaElementList = [];
+  const mediaElementHandler = [];
+
+  function isHTMLMediaElement(el) {
+    return el instanceof original.HTMLMediaElement;
+  }
+
+  // 检测到media对象的处理逻辑，依赖Proxy对media函数的代理
+  function mediaDetectHandler(ctx) {
+    if (isHTMLMediaElement(ctx) && !mediaElementList.includes(ctx)) {
+      mediaElementList.push(ctx);
+
+      try {
+        mediaElementHandler.forEach((handler) => {
+          handler instanceof Function && handler(ctx);
+        });
+      } catch (e) {}
+    }
+  }
+
+  // 代理方法play和pause方法，确保能正确暂停和播放
+  function proxyPrototypeMethod(element, methodName) {
+    const originFunc = element && element.prototype[methodName];
+    if (!originFunc) return;
+
+    element.prototype[methodName] = new original.Proxy(originFunc, {
+      apply(target, ctx, args) {
+        mediaDetectHandler(ctx);
+        return target.apply(ctx, args);
+      },
+    });
+  }
+
+  // 劫持 playbackRate、volume、currentTime 属性，并增加锁定的逻辑，从而实现更强的抗干扰能力
+  function hijackPrototypeProperty(element, property) {
+    if (!element || !element.prototype || !originDescriptors[property]) {
+      return false;
+    }
+
+    original.Object.defineProperty.call(Object, element.prototype, property, {
+      configurable: true,
+      enumerable: true,
+      get: function () {
+        return originDescriptors[property].get.apply(this, arguments);
+      },
+      set: function (value) {
+        if (property === "src") {
+          mediaDetectHandler(this);
+        }
+
+        return originDescriptors[property].set.apply(this, arguments);
+      },
+    });
+  }
+
+  function mediaProxy() {
+    if (!hasProxyHTMLMediaElement) {
+      const proxyMethods = ["play", "pause", "load", "addEventListener"];
+      proxyMethods.forEach((methodName) => {
+        proxyPrototypeMethod(HTMLMediaElement, methodName);
+      });
+
+      const hijackProperty = ["playbackRate", "volume", "currentTime", "src"];
+      hijackProperty.forEach((property) => {
+        hijackPrototypeProperty(HTMLMediaElement, property);
+      });
+
+      hasProxyHTMLMediaElement = true;
+    }
+
+    return hasProxyHTMLMediaElement;
+  }
+
+  /**
+   * 媒体标签检测，可以检测出video、audio、以及其它标签名经过改造后的媒体Element
+   * @param {Function} handler -必选 检出后要执行的回调函数
+   * @returns mediaElementList
+   */
+  function mediaChecker(handler) {
+    if (
+      !(handler instanceof Function) ||
+      mediaElementHandler.includes(handler)
+    ) {
+      return mediaElementList;
+    } else {
+      mediaElementHandler.push(handler);
+    }
+
+    if (!hasProxyHTMLMediaElement) {
+      mediaProxy();
+    }
+
+    return mediaElementList;
+  }
+
+  // 初始化mediaCore相关功能
+  function init(mediaCheckerHandler) {
+    if (hasMediaCoreInit) {
+      return false;
+    }
+
+    originDescriptors = Object.getOwnPropertyDescriptors(
+      HTMLMediaElement.prototype
+    );
+
+    Object.keys(HTMLMediaElement.prototype).forEach((key) => {
+      try {
+        if (HTMLMediaElement.prototype[key] instanceof Function) {
+          originMethods[key] = HTMLMediaElement.prototype[key];
+        }
+      } catch (e) {}
+    });
+
+    mediaCheckerHandler =
+      mediaCheckerHandler instanceof Function ? mediaCheckerHandler : () => {};
+    mediaChecker(mediaCheckerHandler);
+
+    hasMediaCoreInit = true;
+    return true;
+  }
+
+  return {
+    init,
+    mediaChecker,
+    originDescriptors,
+    originMethods,
+    mediaElementList,
+  };
+})();
 
 function notifyUpdate() {
   let version = GM_getValue("mpvHandlerVersion", null);
@@ -201,14 +358,6 @@ function notifyUpdate() {
 
     GM_notification(UPDATE_NOTIFY);
     GM_setValue("mpvHandlerVersion", MPV_HANDLER_VERSION);
-  }
-}
-
-function matchUrl(currentUrl) {
-  if (MATCHERS[location.hostname]) {
-    return currentUrl.search(MATCHERS[location.hostname]) !== -1;
-  } else {
-    return false;
   }
 }
 
@@ -231,8 +380,10 @@ function appendButton() {
     buttonPlay.style = "display: none";
     buttonPlay.target = "_blank";
     buttonPlay.addEventListener("click", (e) => {
-      let videoElement = document.getElementsByTagName("video")[0];
-      if (videoElement) videoElement.pause();
+      mediaCore
+        .mediaChecker(() => {})
+        .filter(Boolean)
+        .forEach((videoElement) => videoElement.pause());
       if (e.stopPropagation) e.stopPropagation();
     });
 
@@ -260,12 +411,11 @@ function appendButton() {
   }
 }
 
-function updateButton(currentUrl) {
-  let isMatch = matchUrl(currentUrl);
+function updateButton(currentUrl, hasVideo) {
   let button = document.getElementsByClassName("pwm-play")[0];
 
   if (button) {
-    let quality = GM_config.get("perferQuality").toLowerCase();
+    let quality = GM_config.get("preferQuality").toLowerCase();
     let cookies = GM_config.get("useCookies").toLowerCase();
     let options = [];
 
@@ -291,25 +441,28 @@ function updateButton(currentUrl) {
       });
     }
 
-    button.style = isMatch ? "display: block" : "display: none";
-    button.href = isMatch ? proto : "";
+    button.style = hasVideo ? "display: block" : "display: none";
+    button.href = hasVideo ? proto : "";
   }
 }
 
 function detectPJAX() {
   let previousUrl = null;
-  let currentUrl = null;
 
-  setInterval(() => {
-    currentUrl = location.href;
+  const checkHref = () => {
+    let currentUrl = location.href;
 
     if (previousUrl !== currentUrl) {
-      updateButton(currentUrl);
       previousUrl = currentUrl;
+      updateButton(currentUrl, !!mediaCore.mediaChecker(() => {}).length);
     }
-  }, 500);
+  };
+
+  setInterval(checkHref, 500);
 }
 
+mediaCore.init();
 notifyUpdate();
 appendButton();
+updateButton(location.href, !!mediaCore.mediaChecker(() => {}).length);
 detectPJAX();
