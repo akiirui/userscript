@@ -209,6 +209,7 @@ const original = {
   prompt,
 };
 
+// from https://github.com/xxxily/h5player/blob/5b1427b9a90e84d65b233aeecf048aabaa3700e2/src/libs/utils/mediaCore.js
 const mediaCore = (function () {
   let hasMediaCoreInit = false;
   let hasProxyHTMLMediaElement = false;
@@ -382,7 +383,6 @@ function appendButton() {
     buttonPlay.addEventListener("click", (e) => {
       mediaCore
         .mediaChecker(() => {})
-        .filter(Boolean)
         .forEach((videoElement) => videoElement.pause());
       if (e.stopPropagation) e.stopPropagation();
     });
@@ -446,6 +446,17 @@ function updateButton(currentUrl, hasVideo) {
   }
 }
 
+function hasVisibleMedia() {
+  return (
+    mediaCore
+      .mediaChecker(() => {})
+      .findIndex((media) => {
+        const style = window.getComputedStyle(media);
+        return style.display !== "none" && style.visibility !== "hidden";
+      }) !== -1
+  );
+}
+
 function detectPJAX() {
   let previousUrl = null;
 
@@ -454,7 +465,7 @@ function detectPJAX() {
 
     if (previousUrl !== currentUrl) {
       previousUrl = currentUrl;
-      updateButton(currentUrl, !!mediaCore.mediaChecker(() => {}).length);
+      updateButton(currentUrl, hasVisibleMedia());
     }
   };
 
@@ -464,5 +475,5 @@ function detectPJAX() {
 mediaCore.init();
 notifyUpdate();
 appendButton();
-updateButton(location.href, !!mediaCore.mediaChecker(() => {}).length);
+updateButton(location.href, hasVisibleMedia());
 detectPJAX();
