@@ -18,7 +18,6 @@
 // @grant               GM_notification
 // @grant               GM_openInTab
 // @run-at              document-body
-// @noframes
 // @match        http://*/*
 // @match        https://*/*
 // ==/UserScript==
