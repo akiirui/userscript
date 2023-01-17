@@ -4,32 +4,38 @@
 
 此用戶腳本[不兼容 Greasemonkey v4.0+][note-greasemonkey]，請嘗試 Violentmonkey 或 Tampermonky。
 
-開發者注:
-
-> 由於 mpv-handler 有一個大的功能性更新，此用戶腳本暫時不支持新的「下載器選擇」功能。
->
-> 功能「下載器選擇」將盡快更新。
+[note-greasemonkey]: https://github.com/akiirui/userscript/issues/1
 
 ## 安裝
 
 ### userscript
 
-[![][badges-play-with-mpv]][install-userscript]
-
-### mpv & youtube-dl
-
-[![mpv][badges-mpv]][install-mpv]
-[![ytdl][badges-ytdl]][install-ytdl]
-
-> 推薦 Windows 用戶安裝 [shinchiro's mpv builds][install-mpv-windows].
->
-> 這個構建同時包含 `mpv` 和 `youtube-dl`，並且擁有更新它們的腳本。
->
-> 在安裝這個構建後，記住運行 `updater.bat` 以更新 `mpv` 和下載最新的 `youtube-dl`。
+[![][badges-play-with-mpv]][install-play-with-mpv]
 
 ### mpv-handler
 
 [![mpv-handler][badges-mpv-handler]][install-mpv-handler]
+
+### mpv & yt-dlp
+
+[![][badges-mpv]][install-mpv]
+[![][badges-yt-dlp]][install-yt-dlp]
+
+> 推薦 Windows 用戶安裝 [shinchiro's mpv builds][install-mpv-windows].
+>
+> 這個構建同時包含 `mpv` 和 `yt-dlp`，並且擁有更新它們的腳本。
+>
+> 在安裝這個構建後，記住運行 `updater.bat` 以更新 `mpv` 和下載最新的 `yt-dlp`。
+
+[badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
+[badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
+[badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
+[badges-yt-dlp]: https://img.shields.io/github/v/tag/yt-dlp/yt-dlp?label=yt-dlp&style=for-the-badge
+[install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
+[install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
+[install-mpv]: https://mpv.io/installation/
+[install-play-with-mpv]: https://greasyfork.org/scripts/416271-play-with-mpv
+[install-yt-dlp]: https://github.com/yt-dlp/yt-dlp/releases
 
 ## 使用
 
@@ -37,13 +43,7 @@
 
 盡情享受！
 
-### 選擇視頻品質
-
-> 這個功能基於 youtube-dl [format selection][usage-format-selection]
-
-1. 打開設置，將 **Perfer Quality** 切換爲你需要的品質。
-
-### 傳遞 cookies 至 `youtube-dl`
+### 傳遞 cookies
 
 **供高級用戶播放僅限會員的視頻。**
 
@@ -66,47 +66,46 @@ Cookies 的文件名必須遵循以下格式：
 
 - `www.youtube.com.txt` (https://www.youtube.com/watch?v=BUOmDL1L4XU)
 
-## 支持的網站 (字母排序)
+### 選擇視頻品質
 
-- bilibili
-- Twitch
-- YouTube
-- 還有更多的網站等待添加～
+> 這個功能基於 [Format Selection][usage-format-selection]
 
-因爲 `youtube-dl` 支持了非常多的網站，我無法一次性添加所有的網站進 `@match`。
+1. 打開設置，選擇你想要的視頻質量。
 
-如果你需要某些網站的支持，歡迎提交 PR 或者創建一個 [Issues][support-issues]。
+### 選擇視頻編碼
 
-當然，僅限於 `youtube-dl` [所支持的網站][support-sites]。
+> 這個功能基於 [Sorting Format][usage-sorting-format]
+
+1. 打開設置，選擇你想要的視頻編碼。
+
+[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
+[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[usage-format-selection]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#format-selection
+[usage-sorting-format]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#sorting-formats
+
+## 網站支持
+
+如果你需要某些網站的支持，歡迎提交 PR 或者創建一個 [Issue][support-issue]。
+
+當然，僅限於 [所支持的網站][support-sites]。
+
+[support-issue]: https://github.com/akiirui/userscript/issues/new
+[support-sites]: https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md
 
 ## GitHub
 
 - [play-with-mpv][github-userscript]
 - [mpv-handler][github-mpv-handler]
 
+[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
+[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv/
+
 ## 鳴謝
 
 - [mpv][thanks-mpv]
-- [youtube-dl][thanks-youtube-dl]
+- [yt-dlp][thanks-yt-dlp]
 - [papirus-icon-theme][thanks-papirus-icon-theme]
 
-[badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
-[badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
-[badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
-[badges-ytdl]: https://img.shields.io/github/v/tag/ytdl-org/youtube-dl?label=youtube-dl&style=for-the-badge
-[github-mpv-handler]: https://github.com/akiirui/mpv-handler/
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv/
-[install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
-[install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
-[install-mpv]: https://mpv.io/installation/
-[install-userscript]: https://greasyfork.org/scripts/416271-play-with-mpv
-[install-ytdl]: https://github.com/ytdl-org/youtube-dl/releases
-[note-greasemonkey]: https://github.com/akiirui/userscript/issues/1
-[support-issues]: https://github.com/akiirui/userscript/issues/new
-[support-sites]: https://ytdl-org.github.io/youtube-dl/supportedsites.html
 [thanks-mpv]: https://mpv.io/
 [thanks-papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
-[thanks-youtube-dl]: https://github.com/ytdl-org/youtube-dl/
-[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
-[usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
-[usage-format-selection]: https://github.com/ytdl-org/youtube-dl/blob/master/README.md#format-selection
+[thanks-yt-dlp]: https://github.com/yt-dlp/yt-dlp

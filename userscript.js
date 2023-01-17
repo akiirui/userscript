@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2022.11.11.3
+// @version             2023.01.17
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -31,7 +31,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.0";
+const MPV_HANDLER_VERSION = "v0.3.1";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -150,8 +150,8 @@ body {
 const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 999;
-width: 440px;
-height: 240px;
+width: 450px;
+height: 260px;
 border: 1px solid;
 border-radius: 2px;
 `;
@@ -160,17 +160,28 @@ GM_config.init({
   id: `${CONFIG_ID}`,
   title: `${GM_info.script.name}`,
   fields: {
-    perferQuality: {
-      label: "Prefer Quality",
-      type: "radio",
-      options: ["Best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
-      default: "Best",
-    },
-    useCookies: {
+    cookies: {
       label: "Try Pass Cookies",
       type: "radio",
-      options: ["Yes", "No"],
-      default: "No",
+      options: ["yes", "no"],
+      default: "no",
+    },
+    // profile: {
+    //   label: "Profile",
+    //   type: "text",
+    //   default: "",
+    // },
+    quality: {
+      label: "Prefer Quality",
+      type: "radio",
+      options: ["best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
+      default: "best",
+    },
+    v_codec: {
+      label: "Prefer Video Codec",
+      type: "radio",
+      options: ["any", "av01", "vp9", "h265", "h264"],
+      default: "any",
     },
   },
   events: {
@@ -265,8 +276,10 @@ function updateButton(currentUrl) {
   let button = document.getElementsByClassName("pwm-play")[0];
 
   if (button) {
-    let quality = GM_config.get("perferQuality").toLowerCase();
-    let cookies = GM_config.get("useCookies").toLowerCase();
+    let cookies = GM_config.get("cookies").toLowerCase();
+    // let profile = GM_config.get("profile");
+    let quality = GM_config.get("quality").toLowerCase();
+    let v_codec = GM_config.get("v_codec").toLowerCase();
     let options = [];
 
     let proto =
@@ -275,8 +288,14 @@ function updateButton(currentUrl) {
     if (cookies === "yes") {
       options.push("cookies=" + document.location.hostname + ".txt");
     }
+    // if (profile.trim() !== "") {
+    //   options.push("profile=" + profile);
+    // }
     if (quality !== "best") {
       options.push("quality=" + quality);
+    }
+    if (v_codec !== "any") {
+      options.push("v_codec=" + v_codec);
     }
 
     if (options.length !== 0) {
