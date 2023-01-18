@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.01.17
+// @version             2023.01.18
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -31,7 +31,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.1";
+const MPV_HANDLER_VERSION = "v0.3.2";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -127,16 +127,30 @@ const CONFIG_ID = "play-with-mpv";
 const CONFIG_CSS = `
 body {
   display: flex;
+  justify-content: center;
 }
 #${CONFIG_ID}_wrapper {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #${CONFIG_ID} .config_header {
-  padding-bottom: 8px;
+  padding: 12px;
 }
-#${CONFIG_ID}_field_perferQuality {
-  padding-top: 4px;
-  padding-bottom: 8px;
+#${CONFIG_ID} .config_var {
+  margin: 0 0 8px 0;
+}
+#${CONFIG_ID}_field_cookies,
+#${CONFIG_ID}_field_quality,
+#${CONFIG_ID}_field_v_codec {
+  display: flex;
+}
+#${CONFIG_ID} .field_label,
+#${CONFIG_ID} .radio_label {
+  font-size: 14px;
+}
+#${CONFIG_ID} input[type='radio'] {
+  margin: 1px 4px 0 8px;
 }
 #${CONFIG_ID} .saveclose_buttons {
   margin: 1px;
@@ -149,11 +163,11 @@ body {
 
 const CONFIG_IFRAME_CSS = `
 position: fixed;
-z-index: 999;
+z-index: 99999;
 width: 450px;
-height: 260px;
+height: 280px;
 border: 1px solid;
-border-radius: 2px;
+border-radius: 10px;
 `;
 
 GM_config.init({
