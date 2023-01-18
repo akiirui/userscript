@@ -66,7 +66,7 @@ Cookies file name must be following this format:
 
 - `www.youtube.com.txt` (https://www.youtube.com/watch?v=BUOmDL1L4XU)
 
-### Prefer Quality
+### Prefer Video Quality
 
 > This feature based on [Format Selection][usage-format-selection]
 

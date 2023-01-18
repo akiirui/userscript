@@ -168,7 +168,7 @@ body {
 const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 99999;
-width: 360px;
+width: 300px;
 height: 280px;
 border: 1px solid;
 border-radius: 10px;
