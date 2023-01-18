@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.01.18
+// @version             2023.01.18.1
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
@@ -138,23 +138,27 @@ body {
   padding: 12px;
 }
 #${CONFIG_ID} .config_var {
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
+}
+#${CONFIG_ID} .field_label {
+  display: inline-block;
+  width: 140px;
+  font-size: 14px;
 }
 #${CONFIG_ID}_field_cookies,
 #${CONFIG_ID}_field_quality,
 #${CONFIG_ID}_field_v_codec {
-  display: flex;
-}
-#${CONFIG_ID} .field_label,
-#${CONFIG_ID} .radio_label {
+  width: 64px;
   font-size: 14px;
+  text-align: center;
 }
-#${CONFIG_ID} input[type='radio'] {
-  margin: 1px 4px 0 8px;
+#${CONFIG_ID}_buttons_holder {
+  display: flex;
+  flex-direction: column;
 }
 #${CONFIG_ID} .saveclose_buttons {
   margin: 1px;
-  padding: 4px 16px;
+  padding: 4px 0;
 }
 #${CONFIG_ID} .reset_holder {
   padding-top: 4px;
@@ -164,7 +168,7 @@ body {
 const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 99999;
-width: 450px;
+width: 360px;
 height: 280px;
 border: 1px solid;
 border-radius: 10px;
@@ -176,7 +180,7 @@ GM_config.init({
   fields: {
     cookies: {
       label: "Try Pass Cookies",
-      type: "radio",
+      type: "select",
       options: ["yes", "no"],
       default: "no",
     },
@@ -186,14 +190,14 @@ GM_config.init({
     //   default: "",
     // },
     quality: {
-      label: "Prefer Quality",
-      type: "radio",
+      label: "Prefer Video Quality",
+      type: "select",
       options: ["best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
       default: "best",
     },
     v_codec: {
       label: "Prefer Video Codec",
-      type: "radio",
+      type: "select",
       options: ["any", "av01", "vp9", "h265", "h264"],
       default: "any",
     },
