@@ -8,10 +8,10 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.01.18.1
+// @version             2023.01.23
 // @author              Akatsuki Rui
 // @license             MIT License
-// @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@a4a49b47ecfb1d8fcd27049cc0e8114d05522a0f/gm_config.js
+// @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
 // @grant               GM_info
 // @grant               GM_getValue
 // @grant               GM_setValue
@@ -31,7 +31,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.2";
+const MPV_HANDLER_VERSION = "v0.3.3";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -146,9 +146,10 @@ body {
   font-size: 14px;
 }
 #${CONFIG_ID}_field_cookies,
+#${CONFIG_ID}_field_profile,
 #${CONFIG_ID}_field_quality,
 #${CONFIG_ID}_field_v_codec {
-  width: 64px;
+  width: 80px;
   font-size: 14px;
   text-align: center;
 }
@@ -169,7 +170,7 @@ const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 99999;
 width: 300px;
-height: 280px;
+height: 300px;
 border: 1px solid;
 border-radius: 10px;
 `;
@@ -184,11 +185,11 @@ GM_config.init({
       options: ["yes", "no"],
       default: "no",
     },
-    // profile: {
-    //   label: "Profile",
-    //   type: "text",
-    //   default: "",
-    // },
+    profile: {
+      label: "MPV Profile",
+      type: "text",
+      default: "default",
+    },
     quality: {
       label: "Prefer Video Quality",
       type: "select",
@@ -204,13 +205,19 @@ GM_config.init({
   },
   events: {
     save: () => {
+      let profile = GM_config.get("profile").trim();
+
+      if (profile === "") {
+        GM_config.set("profile", "default");
+      } else {
+        GM_config.set("profile", profile);
+      }
+
       updateButton(location.href);
       GM_config.close();
     },
     reset: () => {
-      updateButton(location.href);
       GM_config.save();
-      GM_config.close();
     },
   },
   css: CONFIG_CSS.trim(),
@@ -295,7 +302,7 @@ function updateButton(currentUrl) {
 
   if (button) {
     let cookies = GM_config.get("cookies").toLowerCase();
-    // let profile = GM_config.get("profile");
+    let profile = GM_config.get("profile").trim();
     let quality = GM_config.get("quality").toLowerCase();
     let v_codec = GM_config.get("v_codec").toLowerCase();
     let options = [];
@@ -306,9 +313,9 @@ function updateButton(currentUrl) {
     if (cookies === "yes") {
       options.push("cookies=" + document.location.hostname + ".txt");
     }
-    // if (profile.trim() !== "") {
-    //   options.push("profile=" + profile);
-    // }
+    if (profile !== "default" && profile !== "") {
+      options.push("profile=" + profile);
+    }
     if (quality !== "best") {
       options.push("quality=" + quality);
     }

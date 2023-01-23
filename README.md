@@ -45,8 +45,8 @@ Enjoy!
 
 ### Try Pass cookies
 
-**For advanced users to view member-only videos.**
-
+> For advanced users to view member-only videos.
+>
 > Because userscript no permissions to access full cookies (like `HttpOnly` cookies), then manually export cookies only.
 
 1. Open settings, Switch **Try Pass Cookies** to **Yes**.
@@ -66,6 +66,12 @@ Cookies file name must be following this format:
 
 - `www.youtube.com.txt` (https://www.youtube.com/watch?v=BUOmDL1L4XU)
 
+### MPV Profile
+
+> For more details, see [MPV Profiles][usage-mpv-profile]
+
+1. Open settings, enter your want profile name.
+
 ### Prefer Video Quality
 
 > This feature based on [Format Selection][usage-format-selection]
@@ -80,6 +86,7 @@ Cookies file name must be following this format:
 
 [usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
 [usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[usage-mpv-profile]: https://mpv.io/manual/stable/#profiles
 [usage-format-selection]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#format-selection
 [usage-sorting-format]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#sorting-formats
 

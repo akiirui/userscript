@@ -43,10 +43,10 @@
 
 盡情享受！
 
-### 傳遞 cookies
+### Try Pass cookies (傳遞 cookies)
 
-**供高級用戶播放僅限會員的視頻。**
-
+> 供高級用戶播放僅限會員的視頻。
+>
 > 因爲用戶腳本沒有權限讀取所有的 cookies （例如 `HttpOnly` 的 cookies），所以只能手動導出 cookies。
 
 1. 打開設置，將 **Try Pass Cookies** 切換爲 **Yes**。
@@ -66,13 +66,19 @@ Cookies 的文件名必須遵循以下格式：
 
 - `www.youtube.com.txt` (https://www.youtube.com/watch?v=BUOmDL1L4XU)
 
-### 選擇視頻品質
+### MPV Profile (MPV 預設)
+
+> 有關詳細信息，請參閱 [MPV Profiles][usage-mpv-profile]
+
+1. 打開設置，輸入你想要的預設名。
+
+### Prefer Video Quality (選擇視頻品質)
 
 > 這個功能基於 [Format Selection][usage-format-selection]
 
 1. 打開設置，選擇你想要的視頻質量。
 
-### 選擇視頻編碼
+### Prefer Video Codec (選擇視頻編碼)
 
 > 這個功能基於 [Sorting Format][usage-sorting-format]
 
@@ -80,6 +86,7 @@ Cookies 的文件名必須遵循以下格式：
 
 [usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
 [usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
+[usage-mpv-profile]: https://mpv.io/manual/stable/#profiles
 [usage-format-selection]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#format-selection
 [usage-sorting-format]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#sorting-formats
 
