@@ -135,6 +135,8 @@ body {
   justify-content: center;
 }
 #${CONFIG_ID} .config_header {
+  display: flex;
+  align-items: center;
   padding: 12px;
 }
 #${CONFIG_ID} .config_var {
@@ -150,6 +152,7 @@ body {
 #${CONFIG_ID}_field_quality,
 #${CONFIG_ID}_field_v_codec {
   width: 80px;
+  height: 24px;
   font-size: 14px;
   text-align: center;
 }
