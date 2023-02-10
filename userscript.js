@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.02.10
+// @version             2023.02.10.1
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
@@ -16,7 +16,6 @@
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_notification
-// @grant               GM_openInTab
 // @run-at              document-idle
 // @noframes
 // @match               *://www.youtube.com/*
@@ -294,7 +293,7 @@ function notifyUpdate() {
       title: `${GM_info.script.name}`,
       text: `mpv-handler is upgraded to ${MPV_HANDLER_VERSION}\n\nClick to check updates`,
       onclick: () => {
-        GM_openInTab("https://github.com/akiirui/mpv-handler/releases/latest");
+        window.open("https://github.com/akiirui/mpv-handler/releases/latest");
       },
     };
 
@@ -307,20 +306,19 @@ function notifyUpdate() {
 function addShortcut() {
   document.addEventListener("click", (event) => {
     if (event.altKey) {
-      event.preventDefault();
-
       let url = event.target.closest("a").href;
 
       if (url.startsWith("/")) {
         url = location.origin + url;
       }
 
-      GM_openInTab(generateProto(url));
+      event.preventDefault();
+      window.open(generateProto(url));
     }
   });
 }
 
-// Append play and settings buttons to page
+// Add play and settings buttons to page
 function addButton() {
   let head = document.getElementsByTagName("head")[0];
   let style = document.createElement("style");
