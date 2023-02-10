@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.01.23
+// @version             2023.02.10
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
@@ -25,7 +25,7 @@
 // @match               *://clips.twitch.tv/*
 // @match               *://www.crunchyroll.com/*
 // @match               *://beta.crunchyroll.com/*
-// @match               *://www.bilibili.com/video/*
+// @match               *://www.bilibili.com/*
 // @match               *://live.bilibili.com/*
 // ==/UserScript==
 
@@ -178,6 +178,7 @@ border: 1px solid;
 border-radius: 10px;
 `;
 
+// GM_config init
 GM_config.init({
   id: `${CONFIG_ID}`,
   title: `${GM_info.script.name}`,
@@ -226,6 +227,65 @@ GM_config.init({
   css: CONFIG_CSS.trim(),
 });
 
+// Generate "mpv://play/" protocol
+function generateProto(url) {
+  let cookies = GM_config.get("cookies").toLowerCase();
+  let profile = GM_config.get("profile").trim();
+  let quality = GM_config.get("quality").toLowerCase();
+  let v_codec = GM_config.get("v_codec").toLowerCase();
+  let options = [];
+
+  let proto = "mpv://play/" + btoa(url).replace(/\//g, "_").replace(/\+/g, "-");
+
+  if (cookies === "yes") {
+    options.push("cookies=" + document.location.hostname + ".txt");
+  }
+  if (profile !== "default" && profile !== "") {
+    options.push("profile=" + profile);
+  }
+  if (quality !== "best") {
+    options.push("quality=" + quality);
+  }
+  if (v_codec !== "any") {
+    options.push("v_codec=" + v_codec);
+  }
+
+  if (options.length !== 0) {
+    proto += "/?";
+
+    options.forEach((option, index) => {
+      proto += option;
+
+      if (index + 1 !== options.length) {
+        proto += "&";
+      }
+    });
+  }
+
+  return proto;
+}
+
+// Check the URL is matched or not
+function matchUrl(url) {
+  if (MATCHERS[location.hostname]) {
+    return url.search(MATCHERS[location.hostname]) !== -1;
+  } else {
+    return false;
+  }
+}
+
+// Update button display status and URL
+function updateButton(url) {
+  let isMatch = matchUrl(url);
+  let button = document.getElementsByClassName("pwm-play")[0];
+
+  if (button) {
+    button.style = isMatch ? "display: block" : "display: none";
+    button.href = isMatch ? generateProto(url) : "";
+  }
+}
+
+// Notify update about mpv-handler
 function notifyUpdate() {
   let version = GM_getValue("mpvHandlerVersion", null);
 
@@ -243,15 +303,25 @@ function notifyUpdate() {
   }
 }
 
-function matchUrl(currentUrl) {
-  if (MATCHERS[location.hostname]) {
-    return currentUrl.search(MATCHERS[location.hostname]) !== -1;
-  } else {
-    return false;
-  }
+// Add shortcut to play video directly
+function addShortcut() {
+  document.addEventListener("click", (event) => {
+    if (event.altKey) {
+      event.preventDefault();
+
+      let url = event.target.closest("a").href;
+
+      if (url.startsWith("/")) {
+        url = location.origin + url;
+      }
+
+      GM_openInTab(generateProto(url));
+    }
+  });
 }
 
-function appendButton() {
+// Append play and settings buttons to page
+function addButton() {
   let head = document.getElementsByTagName("head")[0];
   let style = document.createElement("style");
 
@@ -299,50 +369,7 @@ function appendButton() {
   }
 }
 
-function updateButton(currentUrl) {
-  let isMatch = matchUrl(currentUrl);
-  let button = document.getElementsByClassName("pwm-play")[0];
-
-  if (button) {
-    let cookies = GM_config.get("cookies").toLowerCase();
-    let profile = GM_config.get("profile").trim();
-    let quality = GM_config.get("quality").toLowerCase();
-    let v_codec = GM_config.get("v_codec").toLowerCase();
-    let options = [];
-
-    let proto =
-      "mpv://play/" + btoa(currentUrl).replace(/\//g, "_").replace(/\+/g, "-");
-
-    if (cookies === "yes") {
-      options.push("cookies=" + document.location.hostname + ".txt");
-    }
-    if (profile !== "default" && profile !== "") {
-      options.push("profile=" + profile);
-    }
-    if (quality !== "best") {
-      options.push("quality=" + quality);
-    }
-    if (v_codec !== "any") {
-      options.push("v_codec=" + v_codec);
-    }
-
-    if (options.length !== 0) {
-      proto += "/?";
-
-      options.forEach((option, index) => {
-        proto += option;
-
-        if (index + 1 !== options.length) {
-          proto += "&";
-        }
-      });
-    }
-
-    button.style = isMatch ? "display: block" : "display: none";
-    button.href = isMatch ? proto : "";
-  }
-}
-
+// Detect PJAX changes
 function detectPJAX() {
   let previousUrl = null;
   let currentUrl = null;
@@ -358,5 +385,6 @@ function detectPJAX() {
 }
 
 notifyUpdate();
-appendButton();
+addShortcut();
+addButton();
 detectPJAX();

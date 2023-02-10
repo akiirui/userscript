@@ -41,6 +41,10 @@ Play videos and songs on the website via mpv-handler, without any background ser
 
 Open supported sites and click left-bottom mpv icon.
 
+Or
+
+Open supported sites and hold `Alt` and click on any link to play that link directly.
+
 Enjoy!
 
 ### Try Pass cookies
