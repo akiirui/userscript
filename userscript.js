@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.02.10.2
+// @version             2023.02.11
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
@@ -302,27 +302,8 @@ function notifyUpdate() {
   }
 }
 
-// Add shortcut to play video directly
-function addShortcut() {
-  document.addEventListener("click", (event) => {
-    if (event.altKey) {
-      event.preventDefault();
-
-      let element = event.target.closest("a");
-
-      if (element && element.href) {
-        let url = element.href.startsWith("/")
-          ? location.origin + element.href
-          : element.href;
-
-        window.open(generateProto(url));
-      }
-    }
-  });
-}
-
 // Add play and settings buttons to page
-function addButton() {
+function createButton() {
   let head = document.getElementsByTagName("head")[0];
   let style = document.createElement("style");
 
@@ -386,6 +367,5 @@ function detectPJAX() {
 }
 
 notifyUpdate();
-addShortcut();
-addButton();
+createButton();
 detectPJAX();
