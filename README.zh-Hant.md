@@ -84,7 +84,7 @@ Cookies 的文件名必須遵循以下格式：
 
 1. 打開設置，選擇你想要的視頻編碼。
 
-[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/
+[usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc/
 [usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
 [usage-mpv-profile]: https://mpv.io/manual/stable/#profiles
 [usage-format-selection]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#format-selection
