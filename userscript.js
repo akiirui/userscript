@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.02.11
+// @version             2023.05.10
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
@@ -30,7 +30,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.3";
+const MPV_HANDLER_VERSION = "v0.3.4";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -226,6 +226,11 @@ GM_config.init({
   css: CONFIG_CSS.trim(),
 });
 
+// URL-safe base64 encode
+function btoaUrl(url) {
+  return btoa(url).replace(/\//g, "_").replace(/\+/g, "-").replace(/\=/g, "");
+}
+
 // Generate "mpv://play/" protocol
 function generateProto(url) {
   let cookies = GM_config.get("cookies").toLowerCase();
@@ -234,7 +239,7 @@ function generateProto(url) {
   let v_codec = GM_config.get("v_codec").toLowerCase();
   let options = [];
 
-  let proto = "mpv://play/" + btoa(url).replace(/\//g, "_").replace(/\+/g, "-");
+  let proto = "mpv://play/" + btoaUrl(url);
 
   if (cookies === "yes") {
     options.push("cookies=" + document.location.hostname + ".txt");
