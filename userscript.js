@@ -8,7 +8,7 @@
 // @description:zh-CN   自动关闭哔哩哔哩 HTML5 播放器弹幕
 // @description:zh-TW   自動關閉嗶哩嗶哩 HTML5 播放器彈幕
 // @namespace           bilibili-danmaku-disabler
-// @version             2022.10.27
+// @version             2023.05.29
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_info
@@ -35,8 +35,8 @@ const SELECTOR_NATIVE = {
 const SELECTOR_EMBED = {
   on: "div[class~='bilibili-player-video-btn-danmaku'][data-text='打开弹幕']",
   off: "div[class~='bilibili-player-video-btn-danmaku'][data-text='关闭弹幕']",
-  onNew: "",
-  offNew: "",
+  onNew: "input:checked[class='bui-danmaku-switch-input']",
+  offNew: "input:not(:checked)[class='bui-danmaku-switch-input']",
 };
 
 const SELECTOR_OTHER = {
