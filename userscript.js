@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.05.20
+// @version             2023.07.04
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
@@ -18,14 +18,11 @@
 // @grant               GM_notification
 // @run-at              document-idle
 // @noframes
-// @match               *://www.youtube.com/*
-// @match               *://m.youtube.com/*
-// @match               *://www.twitch.tv/*
-// @match               *://clips.twitch.tv/*
-// @match               *://www.crunchyroll.com/*
-// @match               *://beta.crunchyroll.com/*
-// @match               *://www.bilibili.com/*
-// @match               *://live.bilibili.com/*
+// @match               *://*.youtube.com/*
+// @match               *://*.twitch.tv/*
+// @match               *://*.crunchyroll.com/*
+// @match               *://*.bilibili.com/*
+// @match               *://*.kick.com/*
 // ==/UserScript==
 
 "use strict";
@@ -42,6 +39,7 @@ const MATCHERS = {
   "beta.crunchyroll.com": /beta.crunchyroll.com\/.*watch\/([0-9]|[A-Z])+/gi,
   "live.bilibili.com": /live.bilibili.com\/[0-9]+/gi,
   "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
+  "kick.com": /kick.com\/(?!(categories)\/).+/gi,
 };
 
 const ICON_MPV =
