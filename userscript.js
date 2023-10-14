@@ -8,10 +8,10 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.07.04
+// @version             2023.10.14
 // @author              Akatsuki Rui
 // @license             MIT License
-// @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@2207c5c1322ebb56e401f03c2e581719f909762a/gm_config.js
+// @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
 // @grant               GM_info
 // @grant               GM_getValue
 // @grant               GM_setValue
@@ -175,36 +175,49 @@ border: 1px solid;
 border-radius: 10px;
 `;
 
+const CONFIG_FIELDS = {
+  cookies: {
+    label: "Try Pass Cookies",
+    type: "select",
+    options: ["yes", "no"],
+    default: "no",
+  },
+  profile: {
+    label: "MPV Profile",
+    type: "text",
+    default: "default",
+  },
+  quality: {
+    label: "Prefer Video Quality",
+    type: "select",
+    options: ["default", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
+    default: "default",
+  },
+  v_codec: {
+    label: "Prefer Video Codec",
+    type: "select",
+    options: ["default", "av01", "vp9", "h265", "h264"],
+    default: "default",
+  },
+};
+
 // GM_config init
 GM_config.init({
   id: `${CONFIG_ID}`,
   title: `${GM_info.script.name}`,
-  fields: {
-    cookies: {
-      label: "Try Pass Cookies",
-      type: "select",
-      options: ["yes", "no"],
-      default: "no",
-    },
-    profile: {
-      label: "MPV Profile",
-      type: "text",
-      default: "default",
-    },
-    quality: {
-      label: "Prefer Video Quality",
-      type: "select",
-      options: ["best", "2160p", "1440p", "1080p", "720p", "480p", "360p"],
-      default: "best",
-    },
-    v_codec: {
-      label: "Prefer Video Codec",
-      type: "select",
-      options: ["any", "av01", "vp9", "h265", "h264"],
-      default: "any",
-    },
-  },
+  fields: CONFIG_FIELDS,
   events: {
+    init: () => {
+      let quality = GM_config.get("quality").toLowerCase();
+      let v_codec = GM_config.get("v_codec").toLowerCase();
+
+      if (!CONFIG_FIELDS.quality.options.includes(quality)) {
+        GM_config.set("quality", "default");
+      }
+      if (!CONFIG_FIELDS.v_codec.options.includes(v_codec)) {
+        GM_config.set("v_codec", "default");
+      }
+    },
     save: () => {
       let profile = GM_config.get("profile").trim();
 
@@ -245,10 +258,10 @@ function generateProto(url) {
   if (profile !== "default" && profile !== "") {
     options.push("profile=" + profile);
   }
-  if (quality !== "best") {
+  if (quality !== "default") {
     options.push("quality=" + quality);
   }
-  if (v_codec !== "any") {
+  if (v_codec !== "default") {
     options.push("v_codec=" + v_codec);
   }
 
