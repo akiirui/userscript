@@ -8,7 +8,7 @@
 // @description:zh-CN   自动关闭哔哩哔哩 HTML5 播放器弹幕
 // @description:zh-TW   自動關閉嗶哩嗶哩 HTML5 播放器彈幕
 // @namespace           bilibili-danmaku-disabler
-// @version             2023.05.29
+// @version             2023.11.26
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_info
@@ -16,6 +16,7 @@
 // @compatible          firefox Since Firefox 14
 // @compatible          opera Since 15
 // @run-at              document-idle
+// @match               *://www.bilibili.com/?bvid=*
 // @match               *://www.bilibili.com/*video/*
 // @match               *://www.bilibili.com/bangumi/play/*
 // @match               *://www.bilibili.com/blackboard/*
@@ -101,6 +102,11 @@ function disableDanmakuPJAX() {
 // Redirect page
 if (location.href.includes("/s/video/")) {
   location.replace(location.href.replace("/s/video/", "/video/"));
+}
+if (location.href.includes("/?bvid=")) {
+  location.replace(
+    location.href.replace("/?bvid=", "/video/").replace(/&.+/, "")
+  );
 }
 
 // Run disabler
