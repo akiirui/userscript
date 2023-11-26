@@ -203,8 +203,8 @@ const CONFIG_FIELDS = {
 
 // GM_config init
 GM_config.init({
-  id: `${CONFIG_ID}`,
-  title: `${GM_info.script.name}`,
+  id: CONFIG_ID,
+  title: GM_info.script.name,
   fields: CONFIG_FIELDS,
   events: {
     init: () => {
