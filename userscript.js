@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2024.04.22.2
+// @version             2024.04.22.3
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -27,7 +27,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.7";
+const MPV_HANDLER_VERSION = "v0.3.8";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -349,15 +349,21 @@ function createButton() {
   let buttonPlay = document.createElement("a");
   let buttonSettings = document.createElement("button");
 
+  let pauseVideo = (e) => {
+    let videoElement = document.getElementsByTagName("video")[0];
+    if (videoElement) {
+      videoElement.pause();
+    } else {
+      setTimeout(pauseVideo, 500, e);
+    }
+    if (e.stopPropagation) e.stopPropagation();
+  };
+
   if (body) {
     buttonPlay.className = "pwm-play";
     buttonPlay.style = "display: none";
     buttonPlay.target = "_blank";
-    buttonPlay.addEventListener("click", (e) => {
-      let videoElement = document.getElementsByTagName("video")[0];
-      if (videoElement) videoElement.pause();
-      if (e.stopPropagation) e.stopPropagation();
-    });
+    buttonPlay.addEventListener("click", pauseVideo);
 
     buttonSettings.className = "pwm-settings";
     buttonSettings.addEventListener("click", () => {
