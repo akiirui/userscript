@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2023.10.14
+// @version             2024.04.22
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -27,7 +27,7 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.4";
+const MPV_HANDLER_VERSION = "v0.3.6";
 
 const MATCHERS = {
   "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
@@ -199,6 +199,12 @@ const CONFIG_FIELDS = {
     options: ["default", "av01", "vp9", "h265", "h264"],
     default: "default",
   },
+  console: {
+    label: "Run With Console",
+    type: "select",
+    options: ["yes", "no"],
+    default: "yes",
+  },
 };
 
 // GM_config init
@@ -242,16 +248,22 @@ function btoaUrl(url) {
   return btoa(url).replace(/\//g, "_").replace(/\+/g, "-").replace(/\=/g, "");
 }
 
-// Generate "mpv://play/" protocol
+// Generate protocol
 function generateProto(url) {
   let cookies = GM_config.get("cookies").toLowerCase();
   let profile = GM_config.get("profile").trim();
   let quality = GM_config.get("quality").toLowerCase();
   let v_codec = GM_config.get("v_codec").toLowerCase();
+  let console = GM_config.get("console").toLowerCase();
   let options = [];
 
-  let proto = "mpv://play/" + btoaUrl(url);
+  let proto;
 
+  if (console === "yes") {
+    proto = "mpv-debug://play/" + btoaUrl(url);
+  } else {
+    proto = "mpv://play/" + btoaUrl(url);
+  }
   if (cookies === "yes") {
     options.push("cookies=" + document.location.hostname + ".txt");
   }

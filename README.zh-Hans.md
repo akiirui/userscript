@@ -84,6 +84,11 @@ Cookies 的文件名必须遵循以下格式：
 
 1. 打开设置，选择你想要的视频编码。
 
+### Run With Console (以命令行运行)
+
+- `yes`: 在有命令行窗口的情况下运行 mpv-handler 以便于查看输出和错误
+- `no`: 在没有命令行窗口的情况下运行 mpv-handler
+
 [usage-cookies-chromium]: https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc/
 [usage-cookies-firefox]: https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/
 [usage-mpv-profile]: https://mpv.io/manual/stable/#profiles

@@ -90,6 +90,11 @@ Cookies file name must be following this format:
 [usage-format-selection]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#format-selection
 [usage-sorting-format]: https://github.com/yt-dlp/yt-dlp/blob/master/README.md#sorting-formats
 
+### Run With Console
+
+- `yes`: Run mpv-handler with console window to view outputs and errors
+- `no`: Run mpv-handler without console window
+
 ## Supported sites
 
 If you need support for some sites, create a [Issue][support-issue].
