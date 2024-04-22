@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2024.04.22
+// @version             2024.04.22.1
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -147,7 +147,8 @@ body {
 #${CONFIG_ID}_field_cookies,
 #${CONFIG_ID}_field_profile,
 #${CONFIG_ID}_field_quality,
-#${CONFIG_ID}_field_v_codec {
+#${CONFIG_ID}_field_v_codec,
+#${CONFIG_ID}_field_console {
   width: 80px;
   height: 24px;
   font-size: 14px;
@@ -170,7 +171,7 @@ const CONFIG_IFRAME_CSS = `
 position: fixed;
 z-index: 99999;
 width: 300px;
-height: 300px;
+height: 400px;
 border: 1px solid;
 border-radius: 10px;
 `;
