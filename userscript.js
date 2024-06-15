@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲 (NSFW)
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲 (NSFW)
 // @namespace           play-with-mpv-handler-nsfw
-// @version             2024.05.11
+// @version             2024.06.15
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -65,102 +65,104 @@ NiAyLjg0OTYwOTQgTCA5Ljc1IDEgTCA2LjI1IDEgeiBNIDggNiBBIDIgMiAwIDAgMSAxMCA4IEEg\
 MiAyIDAgMCAxIDggMTAgQSAyIDIgMCAwIDEgNiA4IEEgMiAyIDAgMCAxIDggNiB6IiB0cmFuc2Zv\
 cm09InRyYW5zbGF0ZSg0IDQpIi8+Cjwvc3ZnPgo=";
 
-const MPV_CSS = `
-.pwm-play {
-  width: 48px;
-  height: 48px;
-  border: 0;
-  border-radius: 50%;
-  background-size: 48px;
-  background-image: url(data:image/svg+xml;base64,${ICON_MPV});
-  background-repeat: no-repeat;
-}
-.pwm-settings {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease-in-out;
-  display: block;
-  position: absolute;
-  top: -32px;
-  width: 32px;
-  height: 32px;
-  margin-left: 8px;
-  border: 0;
-  border-radius: 50%;
-  background-size: 32px;
-  background-color: #eeeeee;
-  background-image: url(data:image/svg+xml;base64,${ICON_SETTINGS});
-  background-repeat: no-repeat;
-}
-.play-with-mpv {
-  z-index: 99999;
-  position: fixed;
-  left: 8px;
-  bottom: 8px;
-}
-.pwm-play:hover + .pwm-settings,
-.pwm-settings:hover {
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.2s ease-in-out;
-}
+const css = String.raw;
+
+const MPV_CSS = css`
+  .pwm-play {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background-size: 48px;
+    background-image: url(data:image/svg+xml;base64,${ICON_MPV});
+    background-repeat: no-repeat;
+  }
+  .pwm-settings {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    position: absolute;
+    top: -32px;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    border: 0;
+    border-radius: 50%;
+    background-size: 32px;
+    background-color: #eeeeee;
+    background-image: url(data:image/svg+xml;base64,${ICON_SETTINGS});
+    background-repeat: no-repeat;
+  }
+  .play-with-mpv {
+    z-index: 99999;
+    position: fixed;
+    left: 8px;
+    bottom: 8px;
+  }
+  .pwm-play:hover + .pwm-settings,
+  .pwm-settings:hover {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 const CONFIG_ID = "play-with-mpv-nsfw";
 
-const CONFIG_CSS = `
-body {
-  display: flex;
-  justify-content: center;
-}
-#${CONFIG_ID}_wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#${CONFIG_ID} .config_header {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-}
-#${CONFIG_ID} .config_var {
-  margin: 0 0 12px 0;
-}
-#${CONFIG_ID} .field_label {
-  display: inline-block;
-  width: 140px;
-  font-size: 14px;
-}
-#${CONFIG_ID}_field_cookies,
-#${CONFIG_ID}_field_profile,
-#${CONFIG_ID}_field_quality,
-#${CONFIG_ID}_field_v_codec,
-#${CONFIG_ID}_field_console {
-  width: 80px;
-  height: 24px;
-  font-size: 14px;
-  text-align: center;
-}
-#${CONFIG_ID}_buttons_holder {
-  display: flex;
-  flex-direction: column;
-}
-#${CONFIG_ID} .saveclose_buttons {
-  margin: 1px;
-  padding: 4px 0;
-}
-#${CONFIG_ID} .reset_holder {
-  padding-top: 4px;
-}
+const CONFIG_CSS = css`
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  #${CONFIG_ID}_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #${CONFIG_ID} .config_header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+  }
+  #${CONFIG_ID} .config_var {
+    margin: 0 0 12px 0;
+  }
+  #${CONFIG_ID} .field_label {
+    display: inline-block;
+    width: 140px;
+    font-size: 14px;
+  }
+  #${CONFIG_ID}_field_cookies,
+    #${CONFIG_ID}_field_profile,
+    #${CONFIG_ID}_field_quality,
+    #${CONFIG_ID}_field_v_codec,
+    #${CONFIG_ID}_field_console {
+    width: 80px;
+    height: 24px;
+    font-size: 14px;
+    text-align: center;
+  }
+  #${CONFIG_ID}_buttons_holder {
+    display: flex;
+    flex-direction: column;
+  }
+  #${CONFIG_ID} .saveclose_buttons {
+    margin: 1px;
+    padding: 4px 0;
+  }
+  #${CONFIG_ID} .reset_holder {
+    padding-top: 4px;
+  }
 `;
 
-const CONFIG_IFRAME_CSS = `
-position: fixed;
-z-index: 99999;
-width: 300px;
-height: 400px;
-border: 1px solid;
-border-radius: 10px;
+const CONFIG_IFRAME_CSS = css`
+  position: fixed;
+  z-index: 99999;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  border-radius: 10px;
 `;
 
 const CONFIG_FIELDS = {
