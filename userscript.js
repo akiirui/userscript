@@ -78,7 +78,9 @@ NiAyLjg0OTYwOTQgTCA5Ljc1IDEgTCA2LjI1IDEgeiBNIDggNiBBIDIgMiAwIDAgMSAxMCA4IEEg\
 MiAyIDAgMCAxIDggMTAgQSAyIDIgMCAwIDEgNiA4IEEgMiAyIDAgMCAxIDggNiB6IiB0cmFuc2Zv\
 cm09InRyYW5zbGF0ZSg0IDQpIi8+Cjwvc3ZnPgo=";
 
-const MPV_CSS = `
+const css = String.raw;
+
+const MPV_CSS = css`
   .pwm-play {
     width: 48px;
     height: 48px;
@@ -121,7 +123,7 @@ const MPV_CSS = `
 
 const CONFIG_ID = "play-with-mpv";
 
-const CONFIG_CSS = `
+const CONFIG_CSS = css`
   body {
     display: flex;
     justify-content: center;
@@ -167,7 +169,7 @@ const CONFIG_CSS = `
   }
 `;
 
-const CONFIG_IFRAME_CSS = `
+const CONFIG_IFRAME_CSS = css`
   position: fixed;
   z-index: 99999;
   width: 300px;
