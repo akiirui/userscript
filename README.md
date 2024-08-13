@@ -18,6 +18,8 @@ Play videos and songs on the website via mpv-handler, without any background ser
 
 ### mpv & yt-dlp
 
+#### Recommended
+
 [![][badges-mpv]][install-mpv]
 [![][badges-yt-dlp]][install-yt-dlp]
 
@@ -27,11 +29,21 @@ Play videos and songs on the website via mpv-handler, without any background ser
 >
 > After install this build, remember run `updater.bat` to update `mpv` and download latest `yt-dlp`.
 
+#### Alternatives
+
+[![badges-mpv-net]][install-mpv-net]
+
+> mpv.net is a media player for Windows with a modern GUI.
+>
+> mpv-handler is compatible with mpv.net, just set `mpv` to mpv.net executable binary in `config.toml`
+
 [badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
+[badges-mpv-net]: https://img.shields.io/github/v/release/mpvnet-player/mpv.net?style=for-the-badge&label=mpv.net
 [badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
 [badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
 [badges-yt-dlp]: https://img.shields.io/github/v/tag/yt-dlp/yt-dlp?label=yt-dlp&style=for-the-badge
 [install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
+[install-mpv-net]: https://github.com/mpvnet-player/mpv.net/blob/main/docs/manual.md#download
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
 [install-mpv]: https://mpv.io/installation/
 [install-play-with-mpv]: https://greasyfork.org/scripts/416271-play-with-mpv

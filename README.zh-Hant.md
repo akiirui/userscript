@@ -18,6 +18,8 @@
 
 ### mpv & yt-dlp
 
+#### 推薦
+
 [![][badges-mpv]][install-mpv]
 [![][badges-yt-dlp]][install-yt-dlp]
 
@@ -27,11 +29,21 @@
 >
 > 在安裝這個構建後，記住運行 `updater.bat` 以更新 `mpv` 和下載最新的 `yt-dlp`。
 
+#### 替代
+
+[![badges-mpv-net]][install-mpv-net]
+
+> mpv.net 是基於受歡迎的 mpv 的 Windows 現代媒體播放器。
+>
+> mpv-handler 兼容 mpv.net，只需要在 `config.toml` 中設置 `mpv` 至 mpv.net 可執行文件即可。
+
 [badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
+[badges-mpv-net]: https://img.shields.io/github/v/release/mpvnet-player/mpv.net?style=for-the-badge&label=mpv.net
 [badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
 [badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
 [badges-yt-dlp]: https://img.shields.io/github/v/tag/yt-dlp/yt-dlp?label=yt-dlp&style=for-the-badge
 [install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
+[install-mpv-net]: https://github.com/mpvnet-player/mpv.net/blob/main/docs/manual_chs.md#%E4%B8%8B%E8%BD%BD
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
 [install-mpv]: https://mpv.io/installation/
 [install-play-with-mpv]: https://greasyfork.org/scripts/416271-play-with-mpv
