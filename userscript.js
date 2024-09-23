@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2024.09.23.3
+// @version             2024.09.23.4
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
