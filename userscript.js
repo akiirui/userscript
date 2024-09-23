@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2024.09.23.5
+// @version             2024.09.23.6
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
@@ -35,10 +35,6 @@ const FONT_CSS = css`
   }
   @font-face {
     font-family: "Segoe UI";
-    src: local("Roboto");
-  }
-  @font-face {
-    font-family: "system-ui";
     src: local("Roboto");
   }
   @font-face {
