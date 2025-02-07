@@ -11,6 +11,8 @@ The source code is stored in the following branches:
 - [play-with-mpv][branch-play-with-mpv]
 - [use-my-fonts][branch-use-my-fonts]
 
+[greasyfork-badge]: https://img.shields.io/badge/GreasyFork-akiirui-blue?style=for-the-badge&logo=grea
+[greasyfork-links]: https://greasyfork.org/en/users/224162-akiirui
 [branch-bilibili-danmaku-disabler]: https://github.com/akiirui/userscript/tree/bilibili-danmaku-disabler
 [branch-live-danmaku-controller]: https://github.com/akiirui/userscript/tree/live-danmaku-controller
 [branch-nga-redirector]: https://github.com/akiirui/userscript/tree/nga-redirector
