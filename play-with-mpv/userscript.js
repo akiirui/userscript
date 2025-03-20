@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2024.08.11.1
+// @version             2024.09.27
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -27,19 +27,44 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.8";
+const MPV_HANDLER_VERSION = "v0.3.12";
+
+const allow = true;
+const block = false;
+const SITE_YOUTUBE = {
+  mode: allow,
+  list: ["/watch", "/playlist", "/shorts"],
+};
+
+const SITE_TWITCH = {
+  mode: block,
+  list: ["/directory", "/downloads", "/jobs", "/p", "/turbo"],
+};
+const SITE_CRUNCHYROLL = {
+  mode: allow,
+  list: ["/watch"],
+};
+const SITE_BILIBILI = {
+  mode: allow,
+  list: ["/bangumi/play", "/video"],
+};
+const SITE_BILIBILI_LIVE = {
+  mode: block,
+  list: ["/p"],
+};
+const SITE_KICK = {
+  mode: block,
+  list: ["/browse", "/category"],
+};
 
 const MATCHERS = {
-  "www.youtube.com": /www.youtube.com\/(watch|playlist|shorts)\?/gi,
-  "m.youtube.com": /m.youtube.com\/(watch|playlist|shorts)\?/gi,
-  "www.twitch.tv":
-    /www.twitch.tv\/(?!(directory|downloads|jobs|p|turbo)\/).+/gi,
-  "clips.twitch.tv": /clips.twitch.tv/gi,
-  "www.crunchyroll.com": /www.crunchyroll.com\/.*watch\/([0-9]|[A-Z])+/gi,
-  "beta.crunchyroll.com": /beta.crunchyroll.com\/.*watch\/([0-9]|[A-Z])+/gi,
-  "live.bilibili.com": /live.bilibili.com\/[0-9]+/gi,
-  "www.bilibili.com": /www.bilibili.com\/video\/(av|bv)/gi,
-  "kick.com": /kick.com\/(?!(categories)\/).+/gi,
+  "www.youtube.com": SITE_YOUTUBE,
+  "m.youtube.com": SITE_YOUTUBE,
+  "www.twitch.tv": SITE_TWITCH,
+  "www.crunchyroll.com": SITE_CRUNCHYROLL,
+  "www.bilibili.com": SITE_BILIBILI,
+  "live.bilibili.com": SITE_BILIBILI_LIVE,
+  "kick.com": SITE_KICK,
 };
 
 const ICON_MPV =
@@ -236,7 +261,7 @@ GM_config.init({
         GM_config.set("profile", profile);
       }
 
-      updateButton(location.href);
+      updateButton();
       GM_config.close();
     },
     reset: () => {
@@ -296,17 +321,33 @@ function generateProto(url) {
 }
 
 // Check the URL is matched or not
-function matchUrl(url) {
+function matchUrl() {
   if (MATCHERS[location.hostname]) {
-    return url.search(MATCHERS[location.hostname]) !== -1;
-  } else {
+    let site = MATCHERS[location.hostname];
+    let path = location.pathname;
+
+    for (const item of site.list) {
+      if (path.startsWith(item)) {
+        if (
+          path.charAt(item.length) === "/" ||
+          path.charAt(item.length) === ""
+        ) {
+          return site.mode;
+        }
+      }
+    }
+
+    if (path !== "/") {
+      return !site.mode;
+    }
+
     return false;
   }
 }
 
 // Update button display status and URL
-function updateButton(url) {
-  let isMatch = matchUrl(url);
+function updateButton() {
+  let isMatch = matchUrl();
   let button = document.getElementsByClassName("pwm-play")[0];
 
   if (button) {
@@ -314,7 +355,7 @@ function updateButton(url) {
       isMatch && !document.fullscreenElement
         ? "display: block"
         : "display: none";
-    button.href = isMatch ? generateProto(url) : "";
+    button.href = isMatch ? generateProto(location.href) : "";
   }
 }
 
@@ -364,7 +405,6 @@ function createButton() {
   if (body) {
     buttonPlay.className = "pwm-play";
     buttonPlay.style = "display: none";
-    buttonPlay.target = "_blank";
     buttonPlay.addEventListener("click", pauseVideo);
 
     buttonSettings.className = "pwm-settings";
@@ -400,7 +440,7 @@ function detectPJAX() {
     currentUrl = location.href;
 
     if (previousUrl !== currentUrl) {
-      updateButton(currentUrl);
+      updateButton();
       previousUrl = currentUrl;
     }
   }, 500);
