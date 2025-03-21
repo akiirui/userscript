@@ -27,10 +27,10 @@
 >
 > 在安装这个构建后，记住运行 `updater.bat` 以更新 `mpv` 和下载最新的 `yt-dlp`。
 
-[badges-mpv-handler]: https://img.shields.io/github/v/tag/akiirui/mpv-handler?label=mpv-handler&style=for-the-badge
-[badges-mpv]: https://img.shields.io/github/v/tag/mpv-player/mpv?label=MPV&style=for-the-badge
-[badges-play-with-mpv]: https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=play-with-mpv&prefix=v&query=version&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F416271.json
-[badges-yt-dlp]: https://img.shields.io/github/v/tag/yt-dlp/yt-dlp?label=yt-dlp&style=for-the-badge
+[badges-mpv-handler]: https://img.shields.io/github/v/release/akiirui/mpv-handler?style=for-the-badge&logo=github&label=mpv-handler&color=blue
+[badges-mpv]: https://img.shields.io/github/v/release/mpv-player/mpv?style=for-the-badge&logo=mpv&label=mpv&color=blue
+[badges-play-with-mpv]: https://img.shields.io/greasyfork/v/416271?style=for-the-badge&logo=greasyfork&label=play-with-mpv
+[badges-yt-dlp]: https://img.shields.io/github/v/release/yt-dlp/yt-dlp?style=for-the-badge&logo=youtube&label=yt-dlp
 [install-mpv-handler]: https://github.com/akiirui/mpv-handler/blob/main/README.md#installation
 [install-mpv-windows]: https://sourceforge.net/projects/mpv-player-windows/files
 [install-mpv]: https://mpv.io/installation/
