@@ -1,84 +1,93 @@
 // prettier-ignore
-$FONTS_EN:
+$FONTS_SANS_EN:
   "Arial",
   "Helvetica",
+  "Lucida Grande",
+  "Lucida Sans Unicode",
   "Open Sans",
   "Segoe UI",
-  "Tahoma";
+  "Tahoma",
+  "Verdana",
+  ;
 // prettier-ignore
-$FONTS_SC:
+$FONTS_SANS_SC:
   "Microsoft YaHei UI",
   "Microsoft YaHei",
   "微软雅黑",
   "NSimsun",
   "新宋体",
-  "Simhei",
-  "宋体",
   "Simsun",
-  "黑体";
+  "宋体",
+  "Simhei",
+  "黑体",
+;
 // prettier-ignore
-$FONTS_TC:
+$FONTS_SANS_TC:
   "Microsoft Jhenghei",
-  "微軟正黑體";
+  "微軟正黑體",
+;
 // prettier-ignore
-$FONTS_JP:
+$FONTS_SANS_JP:
   "ヒラギノ角ゴ Pro W3",
   "Hiragino Kaku Gothic Pro",
-  Osaka,
-  メイリオ,
-  Meiryo,
+  "ＭＳ ゴシック" ,
+  "MS Gothic",
   "ＭＳ Ｐゴシック",
   "MS PGothic",
-  "ＭＳ ゴシック" ,
-  "MS Gothic";
+  "メイリオ",
+  "Meiryo",
+  "Osaka",
+;
 // prettier-ignore
-$FONTS_KR:
+$FONTS_SANS_KR:
   "Malgun Gothic",
-  "맑은 고딕";
+  "맑은 고딕",
+  ;
 // prettier-ignore
 $FONTS_MONO:
-  "Consolas";
+  "Consolas",
+  ;
 
-$FONT_EN: "Roboto";
-$FONT_SC: "Noto Sans CJK SC";
-$FONT_TC: "Noto Sans CJK TC";
-$FONT_JP: "Noto Sans CJK JP";
-$FONT_KR: "Noto Sans CJK KR";
+$FONT_SANS_EN: "Roboto";
+$FONT_SANS_SC: "Noto Sans CJK SC";
+$FONT_SANS_TC: "Noto Sans CJK TC";
+$FONT_SANS_JP: "Noto Sans CJK JP";
+$FONT_SANS_KR: "Noto Sans CJK KR";
 $FONT_MONO: "Cascadia Code";
 
 // English
-@each $FONT in $FONTS_EN {
+@each $FONT in $FONTS_SANS_EN {
   @font-face {
     font-family: $FONT;
-    src: local($FONT_EN);
+    src: local($FONT_SANS_EN);
   }
 }
 // Simplified Chinese
-@each $FONT in $FONTS_SC {
+@each $FONT in $FONTS_SANS_SC {
   @font-face {
     font-family: $FONT;
-    src: local($FONT_SC);
+    src: local($FONT_SANS_SC);
   }
 }
 // Traditional Chinese
-@each $FONT in $FONTS_TC {
+@each $FONT in $FONTS_SANS_TC {
   @font-face {
     font-family: $FONT;
-    src: local($FONT_TC);
+    src: local($FONT_SANS_TC);
   }
 }
 // Jpanese
-@each $FONT in $FONTS_JP {
+@each $FONT in $FONTS_SANS_JP {
   @font-face {
     font-family: $FONT;
-    src: local($FONT_JP);
+    src: local($FONT_SANS_JP);
   }
 }
 // Korean
-@each $FONT in $FONTS_KR {
+@each $FONT in $FONTS_SANS_KR {
   @font-face {
     font-family: $FONT;
-    src: local($FONT_KR);
+    src: local($FONT_SANS_KR);
   }
 }
 // Monospace
