@@ -6,4 +6,4 @@
 
 - [nga-redirector][github]
 
-[github]: https://github.com/akiirui/userscript/tree/nga-redirector
+[github]: https://github.com/akiirui/userscript/tree/main/nga-redirector
