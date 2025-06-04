@@ -31,4 +31,4 @@ Cancel the next related video at the end of the video.
 - [bilibili-danmaku-disabler][github]
 
 [addon-script]: https://greasyfork.org/scripts/386857-live-danmaku-controller
-[github]: https://github.com/akiirui/userscript/tree/bilibili-danmaku-disabler/
+[github]: https://github.com/akiirui/userscript/tree/main/bilibili-danmaku-disabler
