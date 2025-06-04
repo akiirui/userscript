@@ -18,4 +18,4 @@
 
 - [live-danmaku-controller][github]
 
-[github]: https://github.com/akiirui/userscript/tree/live-danmaku-controller
+[github]: https://github.com/akiirui/userscript/tree/main/live-danmaku-controller
