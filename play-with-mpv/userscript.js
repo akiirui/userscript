@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2025.03.20
+// @version             2025.06.04
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -27,15 +27,15 @@
 
 "use strict";
 
-const MPV_HANDLER_VERSION = "v0.3.13";
+const MPV_HANDLER_VERSION = "v0.3.15";
 
 const allow = true;
 const block = false;
+
 const SITE_YOUTUBE = {
   mode: allow,
   list: ["/watch", "/playlist", "/shorts"],
 };
-
 const SITE_TWITCH = {
   mode: block,
   list: ["/directory", "/downloads", "/jobs", "/p", "/turbo"],

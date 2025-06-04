@@ -110,7 +110,7 @@ Cookies 的文件名必須遵循以下格式：
 - [mpv-handler][github-mpv-handler]
 
 [github-mpv-handler]: https://github.com/akiirui/mpv-handler/
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv/
+[github-userscript]: https://github.com/akiirui/userscript/tree/main/play-with-mpv
 
 ## 鳴謝
 

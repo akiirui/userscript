@@ -110,7 +110,7 @@ Of course, [supported sites][support-sites] only.
 - [mpv-handler][github-mpv-handler]
 
 [github-mpv-handler]: https://github.com/akiirui/mpv-handler/
-[github-userscript]: https://github.com/akiirui/userscript/tree/play-with-mpv/
+[github-userscript]: https://github.com/akiirui/userscript/tree/main/play-with-mpv
 
 ## Thanks
 
