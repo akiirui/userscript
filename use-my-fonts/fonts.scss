@@ -1,5 +1,5 @@
 // prettier-ignore
-$FONTS_SANS_EN:
+$SOURCE_SANS_EN:
   "Arial",
   "Helvetica",
   "Lucida Grande",
@@ -10,7 +10,7 @@ $FONTS_SANS_EN:
   "Verdana",
   ;
 // prettier-ignore
-$FONTS_SANS_SC:
+$SOURCE_SANS_SC:
   "Microsoft YaHei UI",
   "Microsoft YaHei",
   "微软雅黑",
@@ -22,12 +22,12 @@ $FONTS_SANS_SC:
   "黑体",
 ;
 // prettier-ignore
-$FONTS_SANS_TC:
+$SOURCE_SANS_TC:
   "Microsoft Jhenghei",
   "微軟正黑體",
 ;
 // prettier-ignore
-$FONTS_SANS_JP:
+$SOURCE_SANS_JP:
   "ヒラギノ角ゴ Pro W3",
   "Hiragino Kaku Gothic Pro",
   "ＭＳ ゴシック" ,
@@ -39,15 +39,16 @@ $FONTS_SANS_JP:
   "Osaka",
 ;
 // prettier-ignore
-$FONTS_SANS_KR:
+$SOURCE_SANS_KR:
   "Malgun Gothic",
   "맑은 고딕",
   ;
 // prettier-ignore
-$FONTS_MONO:
+$SOURCE_MONO:
   "Consolas",
   ;
-$FONT_SANS_EN: (
+
+$TARGET_SANS_EN: (
   100: "Roboto Thin",
   300: "Roboto Light",
   400: "Roboto",
@@ -55,7 +56,7 @@ $FONT_SANS_EN: (
   700: "Roboto Bold",
   900: "Roboto Black",
 );
-$FONT_SANS_EN_ITALIC: (
+$TARGET_SANS_EN_ITALIC: (
   100: "Roboto Thin Italic",
   300: "Roboto Light Italic",
   400: "Roboto Italic",
@@ -63,7 +64,7 @@ $FONT_SANS_EN_ITALIC: (
   700: "Roboto Bold Italic",
   900: "Roboto Black Italic",
 );
-$FONT_SANS_SC: (
+$TARGET_SANS_SC: (
   100: "Noto Sans CJK SC Thin",
   300: "Noto Sans CJK SC Light",
   400: "Noto Sans CJK SC",
@@ -71,7 +72,7 @@ $FONT_SANS_SC: (
   700: "Noto Sans CJK SC Bold",
   900: "Noto Sans CJK SC Black",
 );
-$FONT_SANS_TC: (
+$TARGET_SANS_TC: (
   100: "Noto Sans CJK TC Thin",
   300: "Noto Sans CJK TC Light",
   400: "Noto Sans CJK TC",
@@ -79,7 +80,7 @@ $FONT_SANS_TC: (
   700: "Noto Sans CJK TC Bold",
   900: "Noto Sans CJK TC Black",
 );
-$FONT_SANS_JP: (
+$TARGET_SANS_JP: (
   100: "Noto Sans CJK JP Thin",
   300: "Noto Sans CJK JP Light",
   400: "Noto Sans CJK JP",
@@ -87,7 +88,7 @@ $FONT_SANS_JP: (
   700: "Noto Sans CJK JP Bold",
   900: "Noto Sans CJK JP Black",
 );
-$FONT_SANS_KR: (
+$TARGET_SANS_KR: (
   100: "Noto Sans CJK KR Thin",
   300: "Noto Sans CJK KR Light",
   400: "Noto Sans CJK KR",
@@ -95,7 +96,7 @@ $FONT_SANS_KR: (
   700: "Noto Sans CJK KR Bold",
   900: "Noto Sans CJK KR Black",
 );
-$FONT_MONO: (
+$TARGET_MONO: (
   200: "Cascadia Code ExtraLight",
   300: "Cascadia Code Light",
   350: "Cascadia Code SemiLight",
@@ -103,7 +104,7 @@ $FONT_MONO: (
   600: "Cascadia Code SemiBold",
   700: "Cascadia Code Bold",
 );
-$FONT_MONO_ITALIC: (
+$TARGET_MONO_ITALIC: (
   200: "Cascadia Code ExtraLight Italic",
   300: "Cascadia Code Light Italic",
   350: "Cascadia Code SemiLight Italic",
@@ -113,78 +114,78 @@ $FONT_MONO_ITALIC: (
 );
 
 // English
-@each $FONT in $FONTS_SANS_EN {
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_EN {
+@each $SOURCE in $SOURCE_SANS_EN {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_EN {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_EN_ITALIC {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_EN_ITALIC {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
       font-style: italic;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
 // Simplified Chinese
-@each $FONT in $FONTS_SANS_SC {
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_SC {
+@each $SOURCE in $SOURCE_SANS_SC {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_SC {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
 // Traditional Chinese
-@each $FONT in $FONTS_SANS_TC {
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_TC {
+@each $SOURCE in $SOURCE_SANS_TC {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_TC {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
 // Jpanese
-@each $FONT in $FONTS_SANS_JP {
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_JP {
+@each $SOURCE in $SOURCE_SANS_JP {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_JP {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
 // Korean
-@each $FONT in $FONTS_SANS_KR {
-  @each $WEIGHT, $FONT_NAME in $FONT_SANS_KR {
+@each $SOURCE in $SOURCE_SANS_KR {
+  @each $WEIGHT, $TARGET in $TARGET_SANS_KR {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
 // Monospace
-@each $FONT in $FONTS_MONO {
-  @each $WEIGHT, $FONT_NAME in $FONT_MONO {
+@each $SOURCE in $SOURCE_MONO {
+  @each $WEIGHT, $TARGET in $TARGET_MONO {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
-  @each $WEIGHT, $FONT_NAME in $FONT_MONO_ITALIC {
+  @each $WEIGHT, $TARGET in $TARGET_MONO_ITALIC {
     @font-face {
-      font-family: $FONT;
+      font-family: $SOURCE;
       font-weight: $WEIGHT;
       font-style: italic;
-      src: local($FONT_NAME);
+      src: local($TARGET);
     }
   }
 }
