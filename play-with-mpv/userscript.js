@@ -8,7 +8,7 @@
 // @description:zh-CN   通过 mpv-handler 播放网页上的视频和歌曲
 // @description:zh-TW   通過 mpv-handler 播放網頁上的視頻和歌曲
 // @namespace           play-with-mpv-handler
-// @version             2025.06.04
+// @version             2025.08.21
 // @author              Akatsuki Rui
 // @license             MIT License
 // @require             https://cdn.jsdelivr.net/gh/sizzlemctwizzle/GM_config@06f2015c04db3aaab9717298394ca4f025802873/gm_config.js
@@ -106,6 +106,12 @@ cm09InRyYW5zbGF0ZSg0IDQpIi8+Cjwvc3ZnPgo=";
 const css = String.raw;
 
 const MPV_CSS = css`
+  .play-with-mpv {
+    z-index: 99999;
+    position: fixed;
+    left: 8px;
+    bottom: 8px;
+  }
   .pwm-play {
     width: 48px;
     height: 48px;
@@ -132,12 +138,6 @@ const MPV_CSS = css`
     background-image: url(data:image/svg+xml;base64,${ICON_SETTINGS});
     background-repeat: no-repeat;
   }
-  .play-with-mpv {
-    z-index: 99999;
-    position: fixed;
-    left: 8px;
-    bottom: 8px;
-  }
   .pwm-play:hover + .pwm-settings,
   .pwm-settings:hover {
     opacity: 1;
@@ -152,6 +152,10 @@ const CONFIG_CSS = css`
   body {
     display: flex;
     justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   #${CONFIG_ID}_wrapper {
     display: flex;
