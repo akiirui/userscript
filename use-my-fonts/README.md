@@ -2,9 +2,13 @@
 
 Replace some fonts to custom font.
 
-- EN: Roboto
-- SC: Noto Sans CJK SC
-- TC: Noto Sans CJK TC
-- JP: Noto Sans CJK JP
-- KR: Noto Sans CJK KR
-- Mono: Cascadia Code
+- `Sans-EN`: [Roboto][Roboto]
+- `Sans-JP`: [Noto Sans CJK JP][NotoCJK]
+- `Sans-KR`: [Noto Sans CJK KR][NotoCJK]
+- `Sans-SC`: [Noto Sans CJK SC][NotoCJK]
+- `Sans-TC`: [Noto Sans CJK TC][NotoCJK]
+- `Mono`: [Cascadia Code][CascadiaCode]
+
+[Roboto]: https://github.com/googlefonts/roboto-3-classic/releases
+[NotoCJK]: https://github.com/notofonts/noto-cjk/releases
+[CascadiaCode]: https://github.com/microsoft/cascadia-code
