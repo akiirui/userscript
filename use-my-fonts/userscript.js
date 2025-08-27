@@ -6,11 +6,11 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2025.08.07
+// @version             2025.08.27
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
-// @run-at              document-start
+// @run-at              document-body
 // @match               *://*/*
 // ==/UserScript==
 
