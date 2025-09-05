@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2025.08.27
+// @version             2025.09.05
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
@@ -247,18 +247,6 @@ const FONT_CSS = `
 @font-face { font-family: "맑은 고딕"; font-weight: 500; src: local("Noto Sans CJK KR Medium"); }
 @font-face { font-family: "맑은 고딕"; font-weight: 700; src: local("Noto Sans CJK KR Bold"); }
 @font-face { font-family: "맑은 고딕"; font-weight: 900; src: local("Noto Sans CJK KR Black"); }
-@font-face { font-family: "Consolas"; font-weight: 200; src: local("Cascadia Code ExtraLight"); }
-@font-face { font-family: "Consolas"; font-weight: 300; src: local("Cascadia Code Light"); }
-@font-face { font-family: "Consolas"; font-weight: 350; src: local("Cascadia Code SemiLight"); }
-@font-face { font-family: "Consolas"; font-weight: 400; src: local("Cascadia Code"); }
-@font-face { font-family: "Consolas"; font-weight: 600; src: local("Cascadia Code SemiBold"); }
-@font-face { font-family: "Consolas"; font-weight: 700; src: local("Cascadia Code Bold"); }
-@font-face { font-family: "Consolas"; font-weight: 200; font-style: italic; src: local("Cascadia Code ExtraLight Italic"); }
-@font-face { font-family: "Consolas"; font-weight: 300; font-style: italic; src: local("Cascadia Code Light Italic"); }
-@font-face { font-family: "Consolas"; font-weight: 350; font-style: italic; src: local("Cascadia Code SemiLight Italic"); }
-@font-face { font-family: "Consolas"; font-weight: 400; font-style: italic; src: local("Cascadia Code Italic"); }
-@font-face { font-family: "Consolas"; font-weight: 600; font-style: italic; src: local("Cascadia Code SemiBold Italic"); }
-@font-face { font-family: "Consolas"; font-weight: 700; font-style: italic; src: local("Cascadia Code Bold Italic"); }
 `;
 
 GM_addStyle(FONT_CSS.trim());

@@ -1,8 +1,4 @@
 // prettier-ignore
-$SOURCE_MONO:
-  "Consolas",
-  ;
-// prettier-ignore
 $SOURCE_SANS_EN:
   "Arial",
   "Helvetica",
@@ -48,22 +44,6 @@ $SOURCE_SANS_KR:
   "맑은 고딕",
   ;
 
-$TARGET_MONO: (
-  200: "Cascadia Code ExtraLight",
-  300: "Cascadia Code Light",
-  350: "Cascadia Code SemiLight",
-  400: "Cascadia Code",
-  600: "Cascadia Code SemiBold",
-  700: "Cascadia Code Bold",
-);
-$TARGET_MONO_ITALIC: (
-  200: "Cascadia Code ExtraLight Italic",
-  300: "Cascadia Code Light Italic",
-  350: "Cascadia Code SemiLight Italic",
-  400: "Cascadia Code Italic",
-  600: "Cascadia Code SemiBold Italic",
-  700: "Cascadia Code Bold Italic",
-);
 $TARGET_SANS_EN: (
   100: "Roboto Thin",
   300: "Roboto Light",
@@ -113,24 +93,6 @@ $TARGET_SANS_KR: (
   900: "Noto Sans CJK KR Black",
 );
 
-// Monospace
-@each $SOURCE in $SOURCE_MONO {
-  @each $WEIGHT, $TARGET in $TARGET_MONO {
-    @font-face {
-      font-family: $SOURCE;
-      font-weight: $WEIGHT;
-      src: local($TARGET);
-    }
-  }
-  @each $WEIGHT, $TARGET in $TARGET_MONO_ITALIC {
-    @font-face {
-      font-family: $SOURCE;
-      font-weight: $WEIGHT;
-      font-style: italic;
-      src: local($TARGET);
-    }
-  }
-}
 // English
 @each $SOURCE in $SOURCE_SANS_EN {
   @each $WEIGHT, $TARGET in $TARGET_SANS_EN {
