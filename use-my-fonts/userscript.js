@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2025.09.05
+// @version             2025.09.06
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
@@ -181,54 +181,66 @@ const FONT_CSS = `
 @font-face { font-family: "微軟正黑體"; font-weight: 500; src: local("Noto Sans CJK TC Medium"); }
 @font-face { font-family: "微軟正黑體"; font-weight: 700; src: local("Noto Sans CJK TC Bold"); }
 @font-face { font-family: "微軟正黑體"; font-weight: 900; src: local("Noto Sans CJK TC Black"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 400; src: local("Noto Sans CJK JP"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
 @font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
 @font-face { font-family: "MS Gothic"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
 @font-face { font-family: "MS Gothic"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
 @font-face { font-family: "MS Gothic"; font-weight: 400; src: local("Noto Sans CJK JP"); }
 @font-face { font-family: "MS Gothic"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
 @font-face { font-family: "MS Gothic"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
 @font-face { font-family: "MS Gothic"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
 @font-face { font-family: "MS PGothic"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
 @font-face { font-family: "MS PGothic"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
 @font-face { font-family: "MS PGothic"; font-weight: 400; src: local("Noto Sans CJK JP"); }
 @font-face { font-family: "MS PGothic"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
 @font-face { font-family: "MS PGothic"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
 @font-face { font-family: "MS PGothic"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "メイリオ"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "メイリオ"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "メイリオ"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "メイリオ"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "メイリオ"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "メイリオ"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
 @font-face { font-family: "Meiryo"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
 @font-face { font-family: "Meiryo"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
 @font-face { font-family: "Meiryo"; font-weight: 400; src: local("Noto Sans CJK JP"); }
 @font-face { font-family: "Meiryo"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
 @font-face { font-family: "Meiryo"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
 @font-face { font-family: "Meiryo"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "メイリオ"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "メイリオ"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "メイリオ"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "メイリオ"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "メイリオ"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "メイリオ"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
+@font-face { font-family: "メイリオUI"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
+@font-face { font-family: "メイリオUI"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
+@font-face { font-family: "メイリオUI"; font-weight: 400; src: local("Noto Sans CJK JP"); }
+@font-face { font-family: "メイリオUI"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
+@font-face { font-family: "メイリオUI"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
+@font-face { font-family: "メイリオUI"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
 @font-face { font-family: "Osaka"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
 @font-face { font-family: "Osaka"; font-weight: 300; src: local("Noto Sans CJK JP Light"); }
 @font-face { font-family: "Osaka"; font-weight: 400; src: local("Noto Sans CJK JP"); }
