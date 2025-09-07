@@ -1,4 +1,8 @@
 // prettier-ignore
+$SOURCE_MONO:
+  "Consolas",
+  ;
+// prettier-ignore
 $SOURCE_SANS_EN:
   "Arial",
   "Helvetica",
@@ -46,6 +50,24 @@ $SOURCE_SANS_KR:
   "맑은 고딕",
   ;
 
+$TARGET_MONO_NORMAL: (
+  0: "Cascadia Code",
+  200: "Cascadia Code ExtraLight",
+  300: "Cascadia Code Light",
+  350: "Cascadia Code SemiLight",
+  400: "Cascadia Code",
+  600: "Cascadia Code SemiBold",
+  700: "Cascadia Code Bold",
+);
+$TARGET_MONO_ITALIC: (
+  0: "Cascadia Code Italic",
+  200: "Cascadia Code ExtraLight Italic",
+  300: "Cascadia Code Light Italic",
+  350: "Cascadia Code SemiLight Italic",
+  400: "Cascadia Code Italic",
+  600: "Cascadia Code SemiBold Italic",
+  700: "Cascadia Code Bold Italic",
+);
 $TARGET_SANS_EN_NORMAL: (
   0: "Roboto",
   100: "Roboto Thin",
@@ -106,6 +128,10 @@ $TARGET_SANS_KR: (
 );
 
 $FONTS_LATIN: (
+  $SOURCE_MONO: (
+    NORMAL: $TARGET_MONO_NORMAL,
+    ITALIC: $TARGET_MONO_ITALIC,
+  ),
   $SOURCE_SANS_EN: (
     NORMAL: $TARGET_SANS_EN_NORMAL,
     ITALIC: $TARGET_SANS_EN_ITALIC,
