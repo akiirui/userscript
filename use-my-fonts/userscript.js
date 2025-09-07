@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2025.09.07
+// @version             2025.09.08
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
@@ -33,6 +33,34 @@ const FONT_CSS = `
 @font-face { font-family: "Consolas"; font-weight: 400; font-style: italic; src: local("Cascadia Code Italic"); }
 @font-face { font-family: "Consolas"; font-weight: 600; font-style: italic; src: local("Cascadia Code SemiBold Italic"); }
 @font-face { font-family: "Consolas"; font-weight: 700; font-style: italic; src: local("Cascadia Code Bold Italic"); }
+@font-face { font-family: "Courier"; src: local("Cascadia Code"); }
+@font-face { font-family: "Courier"; font-weight: 200; src: local("Cascadia Code ExtraLight"); }
+@font-face { font-family: "Courier"; font-weight: 300; src: local("Cascadia Code Light"); }
+@font-face { font-family: "Courier"; font-weight: 350; src: local("Cascadia Code SemiLight"); }
+@font-face { font-family: "Courier"; font-weight: 400; src: local("Cascadia Code"); }
+@font-face { font-family: "Courier"; font-weight: 600; src: local("Cascadia Code SemiBold"); }
+@font-face { font-family: "Courier"; font-weight: 700; src: local("Cascadia Code Bold"); }
+@font-face { font-family: "Courier"; font-style: italic; src: local("Cascadia Code Italic"); }
+@font-face { font-family: "Courier"; font-weight: 200; font-style: italic; src: local("Cascadia Code ExtraLight Italic"); }
+@font-face { font-family: "Courier"; font-weight: 300; font-style: italic; src: local("Cascadia Code Light Italic"); }
+@font-face { font-family: "Courier"; font-weight: 350; font-style: italic; src: local("Cascadia Code SemiLight Italic"); }
+@font-face { font-family: "Courier"; font-weight: 400; font-style: italic; src: local("Cascadia Code Italic"); }
+@font-face { font-family: "Courier"; font-weight: 600; font-style: italic; src: local("Cascadia Code SemiBold Italic"); }
+@font-face { font-family: "Courier"; font-weight: 700; font-style: italic; src: local("Cascadia Code Bold Italic"); }
+@font-face { font-family: "Courier New"; src: local("Cascadia Code"); }
+@font-face { font-family: "Courier New"; font-weight: 200; src: local("Cascadia Code ExtraLight"); }
+@font-face { font-family: "Courier New"; font-weight: 300; src: local("Cascadia Code Light"); }
+@font-face { font-family: "Courier New"; font-weight: 350; src: local("Cascadia Code SemiLight"); }
+@font-face { font-family: "Courier New"; font-weight: 400; src: local("Cascadia Code"); }
+@font-face { font-family: "Courier New"; font-weight: 600; src: local("Cascadia Code SemiBold"); }
+@font-face { font-family: "Courier New"; font-weight: 700; src: local("Cascadia Code Bold"); }
+@font-face { font-family: "Courier New"; font-style: italic; src: local("Cascadia Code Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 200; font-style: italic; src: local("Cascadia Code ExtraLight Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 300; font-style: italic; src: local("Cascadia Code Light Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 350; font-style: italic; src: local("Cascadia Code SemiLight Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 400; font-style: italic; src: local("Cascadia Code Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 600; font-style: italic; src: local("Cascadia Code SemiBold Italic"); }
+@font-face { font-family: "Courier New"; font-weight: 700; font-style: italic; src: local("Cascadia Code Bold Italic"); }
 @font-face { font-family: "Arial"; src: local("Roboto"); }
 @font-face { font-family: "Arial"; font-weight: 100; src: local("Roboto Thin"); }
 @font-face { font-family: "Arial"; font-weight: 300; src: local("Roboto Light"); }
