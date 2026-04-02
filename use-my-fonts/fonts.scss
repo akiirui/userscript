@@ -72,7 +72,7 @@ $TARGET_MONO_ITALIC: (
 );
 $TARGET_SANS_EN_NORMAL: (
   0: "Roboto",
-  100: "Roboto Thin",
+  200: "Roboto Thin",
   300: "Roboto Light",
   400: "Roboto",
   500: "Roboto Medium",
@@ -81,52 +81,52 @@ $TARGET_SANS_EN_NORMAL: (
 );
 $TARGET_SANS_EN_ITALIC: (
   0: "Roboto Italic",
-  100: "Roboto Thin Italic",
+  200: "Roboto Thin Italic",
   300: "Roboto Light Italic",
   400: "Roboto Italic",
   500: "Roboto Medium Italic",
   700: "Roboto Bold Italic",
   900: "Roboto Black Italic",
 );
-$TARGET_SANS_SC: (
-  0: "Noto Sans CJK SC",
-  100: "Noto Sans CJK SC Thin",
-  200: "Noto Sans CJK SC Light",
-  300: "Noto Sans CJK SC DemiLight",
-  400: "Noto Sans CJK SC",
-  500: "Noto Sans CJK SC Medium",
-  700: "Noto Sans CJK SC Bold",
-  900: "Noto Sans CJK SC Black",
-);
-$TARGET_SANS_TC: (
-  0: "Noto Sans CJK TC",
-  100: "Noto Sans CJK TC Thin",
-  200: "Noto Sans CJK TC Light",
-  300: "Noto Sans CJK TC DemiLight",
-  400: "Noto Sans CJK TC",
-  500: "Noto Sans CJK TC Medium",
-  700: "Noto Sans CJK TC Bold",
-  900: "Noto Sans CJK TC Black",
-);
 $TARGET_SANS_JP: (
-  0: "Noto Sans CJK JP",
-  100: "Noto Sans CJK JP Thin",
-  200: "Noto Sans CJK JP Light",
-  300: "Noto Sans CJK JP DemiLight",
-  400: "Noto Sans CJK JP",
-  500: "Noto Sans CJK JP Medium",
-  700: "Noto Sans CJK JP Bold",
-  900: "Noto Sans CJK JP Black",
+  0: "Source Han Sans",
+  250: "Source Han Sans ExtraLight",
+  300: "Source Han Sans Light",
+  350: "Source Han Sans Normal",
+  400: "Source Han Sans",
+  500: "Source Han Sans Medium",
+  700: "Source Han Sans Bold",
+  900: "Source Han Sans Heavy",
 );
 $TARGET_SANS_KR: (
-  0: "Noto Sans CJK KR",
-  100: "Noto Sans CJK KR Thin",
-  200: "Noto Sans CJK KR Light",
-  300: "Noto Sans CJK KR DemiLight",
-  400: "Noto Sans CJK KR",
-  500: "Noto Sans CJK KR Medium",
-  700: "Noto Sans CJK KR Bold",
-  900: "Noto Sans CJK KR Black",
+  0: "Source Han Sans KR",
+  250: "Source Han Sans KR ExtraLight",
+  300: "Source Han Sans KR Light",
+  350: "Source Han Sans KR Normal",
+  400: "Source Han Sans KR",
+  500: "Source Han Sans KR Medium",
+  700: "Source Han Sans KR Bold",
+  900: "Source Han Sans KR Heavy",
+);
+$TARGET_SANS_SC: (
+  0: "Source Han Sans SC",
+  250: "Source Han Sans SC ExtraLight",
+  300: "Source Han Sans SC Light",
+  350: "Source Han Sans SC Normal",
+  400: "Source Han Sans SC",
+  500: "Source Han Sans SC Medium",
+  700: "Source Han Sans SC Bold",
+  900: "Source Han Sans SC Heavy",
+);
+$TARGET_SANS_TC: (
+  0: "Source Han Sans TC",
+  250: "Source Han Sans TC ExtraLight",
+  300: "Source Han Sans TC Light",
+  350: "Source Han Sans TC Normal",
+  400: "Source Han Sans TC",
+  500: "Source Han Sans TC Medium",
+  700: "Source Han Sans TC Bold",
+  900: "Source Han Sans TC Heavy",
 );
 
 $FONTS_LATIN: (

@@ -6,7 +6,7 @@
 // @description:en-US   Use my custom fonts on the pages
 // @description:zh-CN   在页面上使用我的自定义字体
 // @namespace           use-my-fonts
-// @version             2025.09.08
+// @version             2026.04.02
 // @author              Akatsuki Rui
 // @license             MIT License
 // @grant               GM_addStyle
@@ -62,309 +62,309 @@ const FONT_CSS = `
 @font-face { font-family: "Courier New"; font-weight: 600; font-style: italic; src: local("Cascadia Code SemiBold Italic"); }
 @font-face { font-family: "Courier New"; font-weight: 700; font-style: italic; src: local("Cascadia Code Bold Italic"); }
 @font-face { font-family: "Arial"; src: local("Roboto"); }
-@font-face { font-family: "Arial"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Arial"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Arial"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Arial"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Arial"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Arial"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Arial"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Arial"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Arial"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Arial"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Arial"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Arial"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Arial"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Arial"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Arial"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Helvetica"; src: local("Roboto"); }
-@font-face { font-family: "Helvetica"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Helvetica"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Helvetica"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Helvetica"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Helvetica"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Helvetica"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Helvetica"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Helvetica"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Helvetica"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Helvetica"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Helvetica"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Helvetica"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Helvetica"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Helvetica"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Helvetica"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Lucida Grande"; src: local("Roboto"); }
-@font-face { font-family: "Lucida Grande"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Lucida Grande"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Lucida Grande"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Lucida Grande"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Lucida Grande"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Lucida Grande"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; src: local("Roboto"); }
-@font-face { font-family: "Lucida Sans Unicode"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Lucida Sans Unicode"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Lucida Sans Unicode"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Lucida Sans Unicode"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Lucida Sans Unicode"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Open Sans"; src: local("Roboto"); }
-@font-face { font-family: "Open Sans"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Open Sans"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Open Sans"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Open Sans"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Open Sans"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Open Sans"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Open Sans"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Open Sans"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Open Sans"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Open Sans"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Open Sans"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Open Sans"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Open Sans"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Open Sans"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Open Sans"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Segoe UI"; src: local("Roboto"); }
-@font-face { font-family: "Segoe UI"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Segoe UI"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Segoe UI"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Segoe UI"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Segoe UI"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Segoe UI"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Segoe UI"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Segoe UI"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Segoe UI"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Segoe UI"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Segoe UI"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Segoe UI"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Segoe UI"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Segoe UI"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Segoe UI"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Tahoma"; src: local("Roboto"); }
-@font-face { font-family: "Tahoma"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Tahoma"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Tahoma"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Tahoma"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Tahoma"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Tahoma"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Tahoma"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Tahoma"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Tahoma"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Tahoma"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Tahoma"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Tahoma"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Tahoma"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Tahoma"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Tahoma"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
 @font-face { font-family: "Verdana"; src: local("Roboto"); }
-@font-face { font-family: "Verdana"; font-weight: 100; src: local("Roboto Thin"); }
+@font-face { font-family: "Verdana"; font-weight: 200; src: local("Roboto Thin"); }
 @font-face { font-family: "Verdana"; font-weight: 300; src: local("Roboto Light"); }
 @font-face { font-family: "Verdana"; font-weight: 400; src: local("Roboto"); }
 @font-face { font-family: "Verdana"; font-weight: 500; src: local("Roboto Medium"); }
 @font-face { font-family: "Verdana"; font-weight: 700; src: local("Roboto Bold"); }
 @font-face { font-family: "Verdana"; font-weight: 900; src: local("Roboto Black"); }
 @font-face { font-family: "Verdana"; font-style: italic; src: local("Roboto Italic"); }
-@font-face { font-family: "Verdana"; font-weight: 100; font-style: italic; src: local("Roboto Thin Italic"); }
+@font-face { font-family: "Verdana"; font-weight: 200; font-style: italic; src: local("Roboto Thin Italic"); }
 @font-face { font-family: "Verdana"; font-weight: 300; font-style: italic; src: local("Roboto Light Italic"); }
 @font-face { font-family: "Verdana"; font-weight: 400; font-style: italic; src: local("Roboto Italic"); }
 @font-face { font-family: "Verdana"; font-weight: 500; font-style: italic; src: local("Roboto Medium Italic"); }
 @font-face { font-family: "Verdana"; font-weight: 700; font-style: italic; src: local("Roboto Bold Italic"); }
 @font-face { font-family: "Verdana"; font-weight: 900; font-style: italic; src: local("Roboto Black Italic"); }
-@font-face { font-family: "Microsoft YaHei UI"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "Microsoft YaHei UI"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "Microsoft YaHei"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "Microsoft YaHei"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "微软雅黑"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "微软雅黑"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "微软雅黑"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "微软雅黑"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "微软雅黑"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "微软雅黑"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "微软雅黑"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "微软雅黑"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "NSimsun"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "NSimsun"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "NSimsun"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "NSimsun"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "NSimsun"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "NSimsun"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "NSimsun"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "NSimsun"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "新宋体"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "新宋体"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "新宋体"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "新宋体"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "新宋体"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "新宋体"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "新宋体"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "新宋体"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "Simsun"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Simsun"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "Simsun"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "Simsun"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "Simsun"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Simsun"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "Simsun"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "Simsun"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "宋体"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "宋体"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "宋体"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "宋体"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "宋体"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "宋体"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "宋体"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "宋体"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "Simhei"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Simhei"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "Simhei"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "Simhei"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "Simhei"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "Simhei"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "Simhei"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "Simhei"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "黑体"; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "黑体"; font-weight: 100; src: local("Noto Sans CJK SC Thin"); }
-@font-face { font-family: "黑体"; font-weight: 200; src: local("Noto Sans CJK SC Light"); }
-@font-face { font-family: "黑体"; font-weight: 300; src: local("Noto Sans CJK SC DemiLight"); }
-@font-face { font-family: "黑体"; font-weight: 400; src: local("Noto Sans CJK SC"); }
-@font-face { font-family: "黑体"; font-weight: 500; src: local("Noto Sans CJK SC Medium"); }
-@font-face { font-family: "黑体"; font-weight: 700; src: local("Noto Sans CJK SC Bold"); }
-@font-face { font-family: "黑体"; font-weight: 900; src: local("Noto Sans CJK SC Black"); }
-@font-face { font-family: "Microsoft Jhenghei"; src: local("Noto Sans CJK TC"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 100; src: local("Noto Sans CJK TC Thin"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 200; src: local("Noto Sans CJK TC Light"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 300; src: local("Noto Sans CJK TC DemiLight"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 400; src: local("Noto Sans CJK TC"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 500; src: local("Noto Sans CJK TC Medium"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 700; src: local("Noto Sans CJK TC Bold"); }
-@font-face { font-family: "Microsoft Jhenghei"; font-weight: 900; src: local("Noto Sans CJK TC Black"); }
-@font-face { font-family: "微軟正黑體"; src: local("Noto Sans CJK TC"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 100; src: local("Noto Sans CJK TC Thin"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 200; src: local("Noto Sans CJK TC Light"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 300; src: local("Noto Sans CJK TC DemiLight"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 400; src: local("Noto Sans CJK TC"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 500; src: local("Noto Sans CJK TC Medium"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 700; src: local("Noto Sans CJK TC Bold"); }
-@font-face { font-family: "微軟正黑體"; font-weight: 900; src: local("Noto Sans CJK TC Black"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "MS Gothic"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "MS Gothic"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "MS Gothic"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "MS Gothic"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "MS Gothic"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "MS Gothic"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "MS Gothic"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "MS Gothic"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "ＭＳ ゴシック"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ＭＳ ゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "MS PGothic"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "MS PGothic"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "MS PGothic"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "MS PGothic"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "MS PGothic"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "MS PGothic"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "MS PGothic"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "MS PGothic"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "Meiryo"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Meiryo"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "Meiryo"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "Meiryo"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "Meiryo"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Meiryo"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "Meiryo"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "Meiryo"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "メイリオ"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "メイリオ"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "メイリオ"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "メイリオ"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "メイリオ"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "メイリオ"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "メイリオ"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "メイリオ"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "Meiryo UI"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "Meiryo UI"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "メイリオUI"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "メイリオUI"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "メイリオUI"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "メイリオUI"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "メイリオUI"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "メイリオUI"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "メイリオUI"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "メイリオUI"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "Osaka"; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Osaka"; font-weight: 100; src: local("Noto Sans CJK JP Thin"); }
-@font-face { font-family: "Osaka"; font-weight: 200; src: local("Noto Sans CJK JP Light"); }
-@font-face { font-family: "Osaka"; font-weight: 300; src: local("Noto Sans CJK JP DemiLight"); }
-@font-face { font-family: "Osaka"; font-weight: 400; src: local("Noto Sans CJK JP"); }
-@font-face { font-family: "Osaka"; font-weight: 500; src: local("Noto Sans CJK JP Medium"); }
-@font-face { font-family: "Osaka"; font-weight: 700; src: local("Noto Sans CJK JP Bold"); }
-@font-face { font-family: "Osaka"; font-weight: 900; src: local("Noto Sans CJK JP Black"); }
-@font-face { font-family: "Malgun Gothic"; src: local("Noto Sans CJK KR"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 100; src: local("Noto Sans CJK KR Thin"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 200; src: local("Noto Sans CJK KR Light"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 300; src: local("Noto Sans CJK KR DemiLight"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 400; src: local("Noto Sans CJK KR"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 500; src: local("Noto Sans CJK KR Medium"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 700; src: local("Noto Sans CJK KR Bold"); }
-@font-face { font-family: "Malgun Gothic"; font-weight: 900; src: local("Noto Sans CJK KR Black"); }
-@font-face { font-family: "맑은 고딕"; src: local("Noto Sans CJK KR"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 100; src: local("Noto Sans CJK KR Thin"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 200; src: local("Noto Sans CJK KR Light"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 300; src: local("Noto Sans CJK KR DemiLight"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 400; src: local("Noto Sans CJK KR"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 500; src: local("Noto Sans CJK KR Medium"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 700; src: local("Noto Sans CJK KR Bold"); }
-@font-face { font-family: "맑은 고딕"; font-weight: 900; src: local("Noto Sans CJK KR Black"); }
+@font-face { font-family: "Microsoft YaHei UI"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "Microsoft YaHei UI"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "Microsoft YaHei"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "Microsoft YaHei"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "微软雅黑"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "微软雅黑"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "微软雅黑"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "微软雅黑"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "微软雅黑"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "微软雅黑"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "微软雅黑"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "微软雅黑"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "NSimsun"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "NSimsun"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "NSimsun"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "NSimsun"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "NSimsun"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "NSimsun"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "NSimsun"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "NSimsun"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "新宋体"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "新宋体"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "新宋体"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "新宋体"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "新宋体"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "新宋体"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "新宋体"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "新宋体"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "Simsun"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Simsun"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "Simsun"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "Simsun"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "Simsun"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Simsun"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "Simsun"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "Simsun"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "宋体"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "宋体"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "宋体"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "宋体"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "宋体"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "宋体"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "宋体"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "宋体"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "Simhei"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Simhei"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "Simhei"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "Simhei"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "Simhei"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "Simhei"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "Simhei"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "Simhei"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "黑体"; src: local("Source Han Sans SC"); }
+@font-face { font-family: "黑体"; font-weight: 250; src: local("Source Han Sans SC ExtraLight"); }
+@font-face { font-family: "黑体"; font-weight: 300; src: local("Source Han Sans SC Light"); }
+@font-face { font-family: "黑体"; font-weight: 350; src: local("Source Han Sans SC Normal"); }
+@font-face { font-family: "黑体"; font-weight: 400; src: local("Source Han Sans SC"); }
+@font-face { font-family: "黑体"; font-weight: 500; src: local("Source Han Sans SC Medium"); }
+@font-face { font-family: "黑体"; font-weight: 700; src: local("Source Han Sans SC Bold"); }
+@font-face { font-family: "黑体"; font-weight: 900; src: local("Source Han Sans SC Heavy"); }
+@font-face { font-family: "Microsoft Jhenghei"; src: local("Source Han Sans TC"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 250; src: local("Source Han Sans TC ExtraLight"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 300; src: local("Source Han Sans TC Light"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 350; src: local("Source Han Sans TC Normal"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 400; src: local("Source Han Sans TC"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 500; src: local("Source Han Sans TC Medium"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 700; src: local("Source Han Sans TC Bold"); }
+@font-face { font-family: "Microsoft Jhenghei"; font-weight: 900; src: local("Source Han Sans TC Heavy"); }
+@font-face { font-family: "微軟正黑體"; src: local("Source Han Sans TC"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 250; src: local("Source Han Sans TC ExtraLight"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 300; src: local("Source Han Sans TC Light"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 350; src: local("Source Han Sans TC Normal"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 400; src: local("Source Han Sans TC"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 500; src: local("Source Han Sans TC Medium"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 700; src: local("Source Han Sans TC Bold"); }
+@font-face { font-family: "微軟正黑體"; font-weight: 900; src: local("Source Han Sans TC Heavy"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; src: local("Source Han Sans"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "Hiragino Kaku Gothic Pro"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; src: local("Source Han Sans"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "ヒラギノ角ゴ Pro W3"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "MS Gothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS Gothic"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "MS Gothic"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "MS Gothic"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "MS Gothic"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "MS Gothic"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "MS Gothic"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "MS Gothic"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "ＭＳ ゴシック"; src: local("Source Han Sans"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "ＭＳ ゴシック"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "MS PGothic"; src: local("Source Han Sans"); }
+@font-face { font-family: "MS PGothic"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "MS PGothic"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "MS PGothic"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "MS PGothic"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "MS PGothic"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "MS PGothic"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "MS PGothic"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; src: local("Source Han Sans"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "ＭＳ Ｐゴシック"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "Meiryo"; src: local("Source Han Sans"); }
+@font-face { font-family: "Meiryo"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "Meiryo"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "Meiryo"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "Meiryo"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "Meiryo"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "Meiryo"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "Meiryo"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "メイリオ"; src: local("Source Han Sans"); }
+@font-face { font-family: "メイリオ"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "メイリオ"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "メイリオ"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "メイリオ"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "メイリオ"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "メイリオ"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "メイリオ"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "Meiryo UI"; src: local("Source Han Sans"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "Meiryo UI"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "メイリオUI"; src: local("Source Han Sans"); }
+@font-face { font-family: "メイリオUI"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "メイリオUI"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "メイリオUI"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "メイリオUI"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "メイリオUI"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "メイリオUI"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "メイリオUI"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "Osaka"; src: local("Source Han Sans"); }
+@font-face { font-family: "Osaka"; font-weight: 250; src: local("Source Han Sans ExtraLight"); }
+@font-face { font-family: "Osaka"; font-weight: 300; src: local("Source Han Sans Light"); }
+@font-face { font-family: "Osaka"; font-weight: 350; src: local("Source Han Sans Normal"); }
+@font-face { font-family: "Osaka"; font-weight: 400; src: local("Source Han Sans"); }
+@font-face { font-family: "Osaka"; font-weight: 500; src: local("Source Han Sans Medium"); }
+@font-face { font-family: "Osaka"; font-weight: 700; src: local("Source Han Sans Bold"); }
+@font-face { font-family: "Osaka"; font-weight: 900; src: local("Source Han Sans Heavy"); }
+@font-face { font-family: "Malgun Gothic"; src: local("Source Han Sans KR"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 250; src: local("Source Han Sans KR ExtraLight"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 300; src: local("Source Han Sans KR Light"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 350; src: local("Source Han Sans KR Normal"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 400; src: local("Source Han Sans KR"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 500; src: local("Source Han Sans KR Medium"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 700; src: local("Source Han Sans KR Bold"); }
+@font-face { font-family: "Malgun Gothic"; font-weight: 900; src: local("Source Han Sans KR Heavy"); }
+@font-face { font-family: "맑은 고딕"; src: local("Source Han Sans KR"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 250; src: local("Source Han Sans KR ExtraLight"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 300; src: local("Source Han Sans KR Light"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 350; src: local("Source Han Sans KR Normal"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 400; src: local("Source Han Sans KR"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 500; src: local("Source Han Sans KR Medium"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 700; src: local("Source Han Sans KR Bold"); }
+@font-face { font-family: "맑은 고딕"; font-weight: 900; src: local("Source Han Sans KR Heavy"); }
 `;
 
 GM_addStyle(FONT_CSS.trim());
